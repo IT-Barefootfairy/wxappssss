@@ -1,0 +1,24 @@
+.userinfo{
+    width: 100vw;
+    height: 100vh;
+    background: #f7f7f7;
+}
+.item_right_img{
+    width: 30PX;
+    height: 30PX;
+    margin-right: 10PX;
+}
+.userInfo_item{
+    display: flex;
+    padding: 12PX;
+    height: 35PX;
+    background: #fff;
+    margin-bottom: 12PX;
+    justify-content: space-between;
+    align-content: center;
+.item_right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+}
