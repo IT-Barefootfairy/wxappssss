@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <body>
+      666
+      <button id="btn">支付</button>
+      <hr />
+      <canvas id="qr"></canvas>
+    
+    <script src="/static/qrious.js"></script> 
+    <script>
+        btn.addEventListener('click',()=>{
+            fetch('/mypay').then((res)=>{
+                return res.json()
+            }).then((response)=>{
+              console.log(response)
+              var qr = new QRious({
+                element: document.getElementById('qr'),
+                value: response.code_url
+              });
+            })
+        });
+      // (function() {
+      //   var qr = new QRious({
+      //     element: document.getElementById('qr'),
+      //     value: 'http://www.baidu.com'
+      //   });
+      // })();
+    </script> 
+  </body>
+</html>
