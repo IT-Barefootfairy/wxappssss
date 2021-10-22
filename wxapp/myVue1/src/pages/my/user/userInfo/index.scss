@@ -2,6 +2,7 @@
     width: 100vw;
     height: 100vh;
     background: #f7f7f7;
+    font-size: 12PX;
 }
 .item_right_img{
     width: 30PX;
@@ -15,10 +16,37 @@
     background: #fff;
     margin-bottom: 12PX;
     justify-content: space-between;
-    align-content: center;
+    align-items: center;
 .item_right{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .tel_change{
+        width: 73PX;
+        height: 20PX;
+        border-radius: 10PX;
+        border: 1px solid #ff656b;
+        color: #ff656b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
 }
+}
+.item_right_box{
+    width: 120PX;
+.item_right_inp{
+    text-align: right
+}
+
+}
+.user_sendbtn{
+    width: 85%;
+    background: #ff656b;
+    border-radius: 16PX;
+    border:none;
+    outline: none;
+    height: 35PX;
+    font-weight: 800;
 }

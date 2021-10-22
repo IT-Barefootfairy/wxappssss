@@ -1179,7 +1179,7 @@
     "@babel/runtime" "^7.11.2"
     "@tarojs/runtime" "3.3.9"
 
-"@tarojs/components@3.3.9":
+"@tarojs/components@^3.2.1", "@tarojs/components@3.3.9":
   "integrity" "sha1-Cq7pthwazYGRGnvrKGUIErpz4Nc= sha512-Li8wi5fPDGgN6pLAvGMGG+s4D6G1RShSvAFgXsBvYj/jO+s5YTHKlnkuhMar23KpMMRxmfHwnQPL6dB4NfRreQ=="
   "resolved" "https://registry.npmmirror.com/@tarojs/components/download/@tarojs/components-3.3.9.tgz"
   "version" "3.3.9"
@@ -1404,7 +1404,7 @@
     "acorn-walk" "^8.0.0"
     "loader-utils" "^1.2.3"
 
-"@tarojs/taro@3.3.9":
+"@tarojs/taro@^3.2.1", "@tarojs/taro@3.3.9":
   "integrity" "sha1-c4mLGgcoI60HB/Oh/eZ1i6Sx6nA= sha512-biKznKNuNmMG36jO6qbTJaruHueK+9Ff9KNcsy6HHNX+TdfFrDjV2zgWZSCNBFhHSULZHWMxo4gtvYii850ipA=="
   "resolved" "https://registry.npmmirror.com/@tarojs/taro/download/@tarojs/taro-3.3.9.tgz?cache=0&sync_timestamp=1634308137991&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40tarojs%2Ftaro%2Fdownload%2F%40tarojs%2Ftaro-3.3.9.tgz"
   "version" "3.3.9"
@@ -3702,7 +3702,7 @@
     "whatwg-mimetype" "^2.2.0"
     "whatwg-url" "^7.0.0"
 
-"dayjs@^1.7.7":
+"dayjs@^1.7.7", "dayjs@^1.8.29":
   "integrity" "sha512-P6twpd70BcPK34K26uJ1KT3wlhpuOAPoMwJzpsIWUxHZ7wpmbdZL/hQqBDfz7hGurYSa5PhzdhDHtt319hL3ig=="
   "resolved" "https://registry.npmjs.org/dayjs/-/dayjs-1.10.7.tgz"
   "version" "1.10.7"
@@ -6390,7 +6390,7 @@
   dependencies:
     "p-locate" "^4.1.0"
 
-"lodash-es@4.17.15":
+"lodash-es@^4.17.15", "lodash-es@4.17.15":
   "integrity" "sha1-Ib2Wg5NUQS8j16EDQOXqxu5FXXg= sha512-rlrc3yU3+JNOpZ9zj5pQtxnx2THmvRykwL4Xlxoa8I9lHBlVbbyPhgyPMioxVZ4NqyxaVVtaJnzsyOidQIhyyQ=="
   "resolved" "https://registry.npm.taobao.org/lodash-es/download/lodash-es-4.17.15.tgz?cache=0&sync_timestamp=1613836280924&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flodash-es%2Fdownload%2Flodash-es-4.17.15.tgz"
   "version" "4.17.15"
@@ -9841,6 +9841,14 @@
     "css-mediaquery" "^0.1.2"
     "postcss-value-parser" "^3.3.0"
 
+"taro-ui-vue3@^1.0.0-alpha.21":
+  "integrity" "sha512-3//e9gnd8VhG9913ifVZP1wwlE9i1iJwwaYkHhSFgD1RhZomHqN+nRBuzNmV+aYZzjpAYqLSpt0v7CHaIyQwdA=="
+  "resolved" "https://registry.npmjs.org/taro-ui-vue3/-/taro-ui-vue3-1.0.0-alpha.21.tgz"
+  "version" "1.0.0-alpha.21"
+  dependencies:
+    "dayjs" "^1.8.29"
+    "lodash-es" "^4.17.15"
+
 "taro-ui@^2.3.4":
   "integrity" "sha512-qjAGO75bIvBGaOlpbnRKecTjmQIzJZjieFuz2UsfSJHnyGgOhlFviWWHPLQQGE2tFcjC0Zol0BDnO4r87JjdSw=="
   "resolved" "https://registry.npmjs.org/taro-ui/-/taro-ui-2.3.4.tgz"
@@ -10462,7 +10470,7 @@
     "hash-sum" "^2.0.0"
     "loader-utils" "^2.0.0"
 
-"vue@^3.0.0", "vue@3.2.20":
+"vue@^3.0.0", "vue@^3.0.10", "vue@3.2.20":
   "integrity" "sha1-lA+KqL8+O+eCQ8pYK61B/NRa4+Y= sha512-81JjEP4OGk9oO8+CU0h2nFPGgJBm9mNa3kdCX2k6FuRdrWrC+CNe+tOnuIeTg8EWwQuI+wwdra5Q7vSzp7p4Iw=="
   "resolved" "https://registry.npmmirror.com/vue/download/vue-3.2.20.tgz?cache=0&sync_timestamp=1633712767060&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fvue%2Fdownload%2Fvue-3.2.20.tgz"
   "version" "3.2.20"

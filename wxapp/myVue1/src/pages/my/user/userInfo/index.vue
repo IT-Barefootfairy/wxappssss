@@ -10,16 +10,45 @@
      <view class="userInfo_item">
          <view>联系人</view>
          <view class="item_right">
-             <!-- <atinput class="item_right_img"/> -->
+             <view class="item_right_box">
+                 <AtInput class="item_right_inp"  placeholder="请输入"/>
+             </view>
              <text decode="true">></text>
          </view>
      </view>
+     <view class="userInfo_item">
+         <view>社区昵称</view>
+         <view class="item_right">
+             <view class="item_right_box">
+                 <AtInput class="item_right_inp"  placeholder="请输入"/>
+             </view>
+             <text decode="true">></text>
+         </view>
+     </view>
+     <view class="userInfo_item">
+         <view>登录密码</view>
+         <view class="item_right">
+             <view class="item_right_box">
+                 <AtInput class="item_right_inp" type="password"  placeholder="请输入"/>
+             </view>
+             <text decode="true">></text>
+         </view>
+     </view>
+     <view class="userInfo_item">
+         <view>手机号码</view>
+         <view class="item_right">
+             <view class="item_right_box">
+                 <AtInput class="item_right_inp"  placeholder="请输入"/>
+             </view>
+             <view class="tel_change">修改手机号</view>
+           
+         </view>
+     </view> 
+      <view> <AtButton type='primary' class="user_sendbtn">立即提交</AtButton></view>
  </view>
 </template>
 
 <script>
-
-// import { AtInput } from 'taro-ui';
 import './index.scss';
 export default {
 

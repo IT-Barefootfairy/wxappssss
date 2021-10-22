@@ -1,11 +1,14 @@
 export default {
     pages: [
+        
+       
         'pages/my/index',
         'pages/index/index',
-        'pages/findhouse/index',
+        'pages/findhouse/index',    
         'pages/issue/index',
         'pages/message/index',
-        
+        "pages/my/user/myvip/index", 
+        "pages/my/user/userInfo/index",
         // 以上为底部路由
         'pages/new_house/new_house',
         'pages/ershou/ershou',
@@ -23,7 +26,7 @@ export default {
         'pages/tudi/index',
         // 'pages/groups/groups',
         'pages/calculator/calculator',
-        "pages/my/user/userInfo/index"
+       
     ],
     window: {
         backgroundTextStyle: 'dark',

@@ -7,8 +7,8 @@
        @tap="goUserInfo"
        src="https://images.tengfangyun.com/images/icon/def_head.jpg?x-oss-process=style/w_80"/>
        <view class="card_msg">
-         <view class="card_net">宿迁房产网网友</view>
-         <view class="card_people">
+         <view class="card_net" @tap="goUserInfo">宿迁房产网网友</view>
+         <view class="card_people" @tap="goMyVip">
            <image class="card_member" src="https://images.sqfcw.com/images/new_icon/ic_huiyuanhui@3x.png?x-oss-process=style/w_80"/>
            普通会员
          </view>
@@ -103,6 +103,10 @@ import './index.scss'
   const goUserInfo=()=>{
     Taro.navigateTo({
       url:'/pages/my/user/userInfo/index'})
+  }
+  const goMyVip=()=>{
+    Taro.navigateTo({
+      url:'/pages/my/user/myvip/index'})
   }
   
 
