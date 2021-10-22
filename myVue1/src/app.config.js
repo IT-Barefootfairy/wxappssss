@@ -7,6 +7,7 @@ export default {
         'pages/my/index',
         // 以上为底部路由
         'pages/new_house/new_house',
+        'pages/new_house/detail',
         'pages/ershou/ershou',
         'pages/renting/renting',
         'pages/groups/groups',
@@ -28,7 +29,8 @@ export default {
         navigationBarBackgroundColor: '#fff',
         navigationBarTitleText: '宿迁找房',
         navigationBarTextStyle: 'black',
-        enablePullDownRefresh: true
+        enablePullDownRefresh: true,
+        onReachBottomDistance: 0
     },
     "tabBar": {
         "color": "#000",

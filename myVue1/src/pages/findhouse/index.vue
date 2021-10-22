@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref,onMounted } from 'vue'
 import './index.scss'
 
 export default {
@@ -14,6 +14,9 @@ export default {
     return {
       msg
     }
-  }
+  },
+  onPullDownRefresh(){
+    console.log(111);
+  },
 }
 </script>
