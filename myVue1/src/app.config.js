@@ -21,14 +21,16 @@ export default {
         'needPage/buy_house/buy_house',
         'pages/tudi/index',
         // 'pages/groups/groups',
-        'pages/calculator/calculator'
+        'pages/calculator/calculator',
+        'pages/details/details',
     ],
     window: {
         backgroundTextStyle: 'dark',
         navigationBarBackgroundColor: '#fff',
         navigationBarTitleText: '宿迁找房',
         navigationBarTextStyle: 'black',
-        enablePullDownRefresh: true
+        enablePullDownRefresh: true,
+        onReachBottomDistance:0//触底距离a
     },
     "tabBar": {
         "color": "#000",
