@@ -1,0 +1,45 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let Config = [
+            { configId: 1, image: 'https://www.alipay.com/a.png', text: '配置1' },
+            { configId: 2, image: 'https://www.alipay.com/b.png', text: '配置2' },
+            { configId: 3, image: 'https://www.alipay.com/c.png', text: '配置3' }
+        ]
+
+        let DataList = [
+            { id: 101, configId: 2, from: '3088001' },
+            { id: 102, configId: 3, from: '3088002' },
+            { id: 103, configId: 1, from: '3088003' },
+            { id: 104, configId: 1, from: '3088004' }
+        ]
+
+        function arr( Config,DataList){
+            console.log(Config,DataList);
+            let newArr=[]
+           for(var i=0;i<DataList.length;i++){
+               if(newArr.indexOf(DataList[i])===-1){
+                   newArr.push(DataList[i]);
+               }
+           }
+           console.log(newArr);
+        }
+        arr(Config,DataList)
+
+    </script>
+</body>
+
+</html>
