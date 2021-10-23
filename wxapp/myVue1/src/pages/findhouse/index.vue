@@ -121,9 +121,6 @@ export default {
           console.log(dataIndex.dataL);
         }
       }),
-        getHouseList().then((res) => {
-          console.log(res);
-        }),
         gethomg().then((res) => {
           console.log(res);
           if (res.code === 1 && res.msg === "获取数据成功") {

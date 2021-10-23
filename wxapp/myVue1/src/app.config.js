@@ -7,6 +7,7 @@ export default {
         'pages/my/index',
         // 以上为底部路由
         'pages/new_house/new_house',
+        'pages/new_house/detail',
         'pages/ershou/ershou',
         'pages/renting/renting',
         'pages/groups/groups',
@@ -23,6 +24,7 @@ export default {
         // 'pages/groups/groups',
         'pages/calculator/calculator',
         'pages/details/details',
+        'pages/calculator/calculator'
     ],
     window: {
         backgroundTextStyle: 'dark',
