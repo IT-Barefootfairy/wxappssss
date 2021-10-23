@@ -1,7 +1,34 @@
 .member{
+    width: 100vw;
+    height: 100vh;
+    // background-image: url(https://images.sqfcw.com/images/new_icon/vip_bg.png?x-oss-process=style/w_320);
+    // background-position: center center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+.member_img{
     width: 100%;
-    height: 100%;
+    height: 140PX;
+    background: #000;
 .member_img_vip{
-    opacity: 0;
+    width: 100%;
+    // height: 140PX
+}    
+}
+
+}
+.commenvip{
+    width: 75PX;
+    height: 20PX;
+    margin-left: 10PX;
+    font-size: 11PX;
+    background-color: rgba(0,0,0,.35);
+    color: #d8d8d8;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+.card_littlevip{
+    width: 12PX;
+    height: 12PX;
 }
 }
