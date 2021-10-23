@@ -16,8 +16,9 @@ module.exports = app => {
   router.get('/customindex', controller.sqzf.customindex)
   // 找房接口
   router.get('/customhose', controller.sqzf.customhose)
-  
   router.get('/customhoseList', controller.sqzf.customhoseList)
-  
   router.get('/customershou',controller.sqzf.customershou)
+  router.get('/chatFriends',controller.sqzf.chatFriends)
+  router.get('/fangFriends',controller.sqzf.fangFriends)
+  router.get('/messageDetail',controller.sqzf.messageDetail)
 };
