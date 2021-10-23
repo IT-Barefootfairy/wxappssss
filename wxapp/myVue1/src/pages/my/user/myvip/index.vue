@@ -11,7 +11,7 @@
 </view>
 <view class="myvip_bottom">
     <view>长期有效</view>
-    <view class="card_open">立即开通</view>
+    <view class="card_open" @tap="goMember">立即开通</view>
 </view>
  </view>
  <view class="card_rights">权益<text class="VIP" decode="true">&nbsp;VIP</text></view>
@@ -33,7 +33,10 @@ import Taro from '@tarojs/taro';
  const goMy=()=>{
      Taro.navigateTo({ url:'/pages/my/index'})
  }
+ const goMember=()=>{
 
+     Taro.navigateTo({url:'/pages/my/user/member/index'})
+ }
 </script>
 
 <style>
