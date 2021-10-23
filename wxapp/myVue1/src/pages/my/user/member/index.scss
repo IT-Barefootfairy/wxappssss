@@ -9,9 +9,10 @@
     width: 100%;
     height: 140PX;
     background: #000;
+    position: relative;
 .member_img_vip{
     width: 100%;
-    // height: 140PX
+    height: 140PX
 }    
 }
 
@@ -31,4 +32,14 @@
     width: 12PX;
     height: 12PX;
 }
+}
+.member_name{
+    position: absolute;
+    top: 30PX;
+    left: 35%;
+}
+.memebr_netfriend{
+    font-size: 12PX;
+    color: #fff;
+    font-weight: 700;
 }
