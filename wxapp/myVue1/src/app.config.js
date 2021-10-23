@@ -24,7 +24,6 @@ export default {
         // 'pages/groups/groups',
         'pages/calculator/calculator',
         'pages/details/details',
-        'pages/calculator/calculator'
     ],
     window: {
         backgroundTextStyle: 'dark',
