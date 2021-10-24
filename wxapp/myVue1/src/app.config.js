@@ -1,5 +1,6 @@
 export default {
     pages: [
+        'pages/my/user/member/index',
         'pages/index/index',
         'pages/findhouse/index',
         'pages/issue/index',
@@ -21,7 +22,7 @@ export default {
         'needPage/rest_house/rest_house',
         'needPage/buy_house/buy_house',
         'pages/tudi/index',
-        'pages/my/user/member/index',
+        
         "pages/my/user/myvip/index", 
         "pages/my/user/userInfo/index",
         // 'pages/groups/groups',
