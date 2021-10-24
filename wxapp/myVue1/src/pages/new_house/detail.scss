@@ -87,4 +87,42 @@
             right: 2rem;
         }
     }
+    .message {
+        width: 100%;
+        height: 4.25rem;
+        // background-color: yellow;
+        display: flex;
+        justify-content: space-around;
+        .jun {}
+        .text {
+            // border-left: 1px solid #F1F1F1;
+        }
+        .text::after {
+            content: "";
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 200%;
+            height: 200%;
+            border-left: 1px solid #F1F1F1;
+            transform: scale(0.5);
+            transform-origin: 0 0;
+        }
+        .zong {
+            border-left: 1px solid #F1F1F1;
+        }
+        .zong::after {
+            content: "";
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 200%;
+            height: 200%;
+            border-left: 1px solid #F1F1F1;
+            transform: scale(0.5);
+            transform-origin: 0 0;
+        }
+    }
 }

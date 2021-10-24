@@ -97,3 +97,40 @@
   top: 1.475rem;
   right: 2rem;
 }
+
+.index .message {
+  width: 100%;
+  height: 4.25rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.index .message .text::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 200%;
+  height: 200%;
+  border-left: 1px solid #F1F1F1;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+}
+
+.index .message .zong {
+  border-left: 1px solid #F1F1F1;
+}
+
+.index .message .zong::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 200%;
+  height: 200%;
+  border-left: 1px solid #F1F1F1;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+}
