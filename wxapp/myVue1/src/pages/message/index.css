@@ -196,30 +196,39 @@
 
 .index .panel__content .tab-content .tab_text .text_left .text_top {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-flow: row wrap;
   align-items: center;
-  margin: 0 -18px;
+  width: 100%;
 }
 
-.index .panel__content .tab-content .tab_text .text_left .text_top text:nth-of-type(1) {
+.index .panel__content .tab-content .tab_text .text_left .text_top .text_top_first {
+  width: 80%;
+  display: flex;
+}
+
+.index .panel__content .tab-content .tab_text .text_left .text_top .text_top_first .text_top_name {
+  width: 70%;
   font-weight: 700;
   font-size: 1.1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.index .panel__content .tab-content .tab_text .text_left .text_top text:nth-of-type(2) {
+.index .panel__content .tab-content .tab_text .text_left .text_top .text_top_first text {
   width: 2.8rem;
   height: 1.1rem;
   line-height: 1.1rem;
   text-align: center;
   color: #fff;
   font-size: 0.8rem;
-  margin-left: -30px;
+  margin-left: 25px;
   border-radius: 9px 0px 9px 0px;
   background-image: -webkit-linear-gradient(top, #fcd88c, #f6ce4c);
 }
 
-.index .panel__content .tab-content .tab_text .text_left .text_top text:nth-of-type(3) {
+.index .panel__content .tab-content .tab_text .text_left .text_top .text_top_second text {
   color: #666;
   font-size: 0.2rem;
 }

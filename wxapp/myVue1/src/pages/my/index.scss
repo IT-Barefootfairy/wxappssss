@@ -1,0 +1,147 @@
+.my{
+    width: 100vw;
+    height: 100vh;
+    background: #f7f7f7;
+.header_bg{
+    width: 100vw;
+    height: 8.3rem;
+    background-image: linear-gradient(0deg,#f7918f,#fb656a);
+}
+.my_card{
+    font-size: 12PX;
+    padding: 12PX;
+    width: 77vw;
+    height: 7.2rem;
+    background: #fff;
+    box-shadow: 0px 0px 20px #ccc;
+    border-radius: .6rem;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.44rem;
+    .card_foot{
+        width: 100%;
+        height: 40PX;
+        margin-top: 12PX;
+        padding-top: 12PX;
+        font-size: 10PX;
+        border-top: 1px solid #ccc;
+        display: flex;
+        justify-content: space-between;
+    .card_foot_item{
+        width: 44PX;
+        height: 30PX;
+        
+        text-align: center;
+    .shu{
+        color: #fb656a;
+        font-weight: 800;
+        font-size: 13PX;
+    }
+    }
+    }
+.card_author{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+.card_img{
+    width: 50PX;
+    height: 50PX;
+    border-radius: 50%;
+    }
+.card_msg{
+    .card_net{
+        margin-bottom: 8PX;
+        font-weight: 800;
+    }
+    .card_people{
+        width: 72PX;
+        height: 17PX;
+        border-radius: 20PX;
+        background-color: rgba(0,0,0,.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .card_member{
+        width: 13PX;
+        height: 13PX;
+
+    }
+}
+.agent{
+    width: 73PX;
+    height: 25PX;
+    background: #fb656a;
+    border-radius: 16PX;
+    color: #fff;
+    display: flex;align-items: center;
+    justify-content: center;
+}
+}
+
+}
+    
+}
+.card_option{
+    background: #fff;
+    height: 56PX;
+    padding-top: 44PX;
+    padding-left: 8PX;
+    padding-right: 8PX;
+    display: flex;
+    justify-content: space-around;
+    .item_img{
+        width: 22PX;
+        height: 25PX;
+    }
+    .item_con{
+        font-size: 12PX
+    }
+}
+.my_send{
+    padding: 22PX;
+    // width: 100%;
+    height: 20%;
+    background: #fff;
+    margin-top: 10PX;
+.send_header{
+    height: 42PX;
+    // display: flex;
+    // align-items: center;
+    font-size: 14PX;
+}
+.send_type{
+    display: flex;
+    justify-content: space-between;
+    padding: 10PX;
+}
+.send_item{
+    text-align: center;
+    font-size: 12PX;
+    line-height: 20PX;
+.send_item_img{
+    width: 20PX;
+    height: 24PX;
+}
+}
+}
+.my_order{
+    background: #f7f7f7;
+}
+.order_item{
+    height: 50PX;
+    font-size: 12PX;
+    padding-left: 22PX;
+    padding-right: 22PX;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    margin-top: 10PX;
+    justify-content: space-between;
+.dialog-close{
+    font-size: 14PX;
+    color: #ccc;
+}
+}

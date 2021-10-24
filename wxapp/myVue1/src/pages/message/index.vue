@@ -30,15 +30,26 @@
               class="tab-content"
               v-for="(item, index) in firends"
               :key="index"
-              @tap="goDetails(item.chat_id)"
+              @tap="goDetails(item.chat_id, item.user_id)"
             >
-              <view class="tab_text" @tap="goDetails">
-                <image :src="item.headimage" class="girls" />
+              <view class="tab_text">
+                <view class="img_girls">
+                  <image :src="item.headimage" class="girls" />
+                </view>
+
                 <view class="text_left">
                   <view class="text_top">
-                    <text>{{ item.nickname }}</text>
-                    <text>{{ item.alias_name }}</text>
-                    <text>{{ item.chat.time }}</text>
+                    <view class="text_top_first">
+                      <view class="text_top_name">
+                        {{ item.nickname }}
+                      </view>
+                      <text>
+                        {{ item.alias_name }}
+                      </text>
+                    </view>
+                    <view class="text_top_second">
+                      <text>{{ item.chat.time }}</text>
+                    </view>
                   </view>
                   <view class="text_bottom">{{ item.unread }}</view>
                 </view>
@@ -52,7 +63,10 @@
               :key="index"
             >
               <view class="tab_text">
-                <image :src="item.prelogo" class="girls" />
+                <view class="img_girls">
+                  <image :src="item.prelogo" class="girls" />
+                </view>
+
                 <view class="text_left">
                   <view class="text_top">
                     <text>{{ item.cname }}</text>
@@ -108,12 +122,11 @@ export default {
       getClose: () => {
         dataIndex.isVisiable = false;
       },
-      goDetails: (id) => {
-        console.log(id,1111111111111111);
+      goDetails: (chat_id, user_id) => {
+        // console.log(chat_id,, 1111111111111111);
         Taro.navigateTo({
-          url:`/pages/details/details?id=${id}`,
+          url: `/pages/details/details?chat_id=${chat_id}&user_id=${user_id}`,
         });
-        
       },
     });
     const msg = ref("消息");
