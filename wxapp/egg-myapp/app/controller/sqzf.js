@@ -6,152 +6,7 @@ class SqzfController extends Controller {
     const { ctx } = this;
     ctx.body = ctx.userAgents;
   }
-    // 首页
-    async customindex() {
-      //https://www.sqfcw.com/wapi/index/customIndex.html
-      //"https://www.sqfcw.com/wapi/index/customIndex.html"
-      const { ctx } = this;
-      let url = "https://www.sqfcw.com/wapi/index/customIndex.html"
-  
-      let result = await ctx.curl(url, {
-        method: 'GET',
-        headers: {
-          "content-type": "text/html",
-          "User-Agent": ctx.userAgents,
-          "referer": "https://www.sqfcw.com/m/",
-          "from": "3"
-        }
-      });
-  
-      result.data = JSON.parse(result.data.toString())
-      // console.log(result,'----')
-      ctx.body = result
-    }
-    // 首页
-    async customershou() {
-      //https://www.sqfcw.com/wapi/index/customIndex.html
-      //"https://www.sqfcw.com/wapi/index/customIndex.html"
-      const { ctx } = this;
-      let url = "https://www.sqfcw.com/wapi/index/infoData.html?type=ershoufang&setting=25"
-  
-      let result = await ctx.curl(url, {
-        method: 'GET',
-        headers: {
-          "content-type": "application/json",
-          "User-Agent": ctx.userAgents,
-          "referer": "https://www.sqfcw.com/m/",
-          "from": "3"
-        }
-      });
-  
-      result.data = JSON.parse(result.data.toString())
-      console.log(result, '----123')
-      ctx.body = result
-    }
-    // 找房头部数据
-    async customhose() {
-  
-      const { ctx } = this;
-      let url = "https://www.sqfcw.com/wapi/House/wordImage"
-  
-      let result = await ctx.curl(url, {
-        method: 'GET',
-        headers: {
-          "content-type": " application/json",
-          "User-Agent": ctx.userAgents,
-          "referer": "https://www.sqfcw.com/m/pages/index/find_house",
-          "from": "3"
-        }
-      });
-  
-      result.data = JSON.parse(result.data.toString())
-      console.log(result, '----22222')
-      ctx.body = result
-    }
-    // 找房列表内容
-    async customhoseList() {
-      //浏览器库
-      const userAgents = [
-        "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.12) Gecko/20070731 Ubuntu/dapper-security Firefox/1.5.0.12",
-        "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Acoo Browser; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.0.04506)",
-        "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11",
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.20 (KHTML, like Gecko) Chrome/19.0.1036.7 Safari/535.20",
-        "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.8) Gecko Fedora/1.9.0.8-1.fc10 Kazehakase/0.5.6",
-        "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.71 Safari/537.1 LBBROWSER",
-        "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 2.0.50727; Media Center PC 6.0) ,Lynx/2.8.5rel.1 libwww-FM/2.14 SSL-MM/1.4.1 GNUTLS/1.2.9",
-        "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)",
-        "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; QQBrowser/7.0.3698.400)",
-        "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; QQDownload 732; .NET4.0C; .NET4.0E)",
-        "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:2.0b13pre) Gecko/20110307 Firefox/4.0b13pre",
-        "Opera/9.80 (Macintosh; Intel Mac OS X 10.6.8; U; fr) Presto/2.9.168 Version/11.52",
-        "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.12) Gecko/20070731 Ubuntu/dapper-security Firefox/1.5.0.12",
-        "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; LBBROWSER)",
-        "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.8) Gecko Fedora/1.9.0.8-1.fc10 Kazehakase/0.5.6",
-        "Mozilla/5.0 (X11; U; Linux; en-US) AppleWebKit/527+ (KHTML, like Gecko, Safari/419.3) Arora/0.6",
-        "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; QQBrowser/7.0.3698.400)",
-        "Opera/9.25 (Windows NT 5.1; U; en), Lynx/2.8.5rel.1 libwww-FM/2.14 SSL-MM/1.4.1 GNUTLS/1.2.9",
-        "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36"
-      ];
-  
-      //构造请求头-浏览器
-      function randomHead() {
-        return userAgents[
-          Math.floor(Math.random() * (0 - userAgents.length) + userAgents.length)
-        ];
-      }
-  
-      //构造请求头-ip
-      function returnIp() {
-        return (
-          Math.floor(Math.random() * (10 - 255) + 255) +
-          "." +
-          Math.floor(Math.random() * (10 - 255) + 255) +
-          "." +
-          Math.floor(Math.random() * (10 - 255) + 255) +
-          "." +
-          Math.floor(Math.random() * (10 - 255) + 255)
-        );
-      }
-      const { ctx } = this;
-      let url = "https://www.sqfcw.com/wapi/House/subscribeList?page=2&rows=20&lat=&lng="
-      //"https://www.sqfcw.com/wapi/index/customIndex.html"
-      let refererUrl = "https://www.sqfcw.com/m/pages/index/find_house";
-      let ip = returnIp();
-      console.log(ip, '----')
-      let result = await ctx.curl(url, {
-        method: 'GET',
-        headers: {
-          "content-type": "text/html",
-          "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1",
-          "from": "3",
-          "referer": refererUrl,
-          "content-type": "application/json",
-          "authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcGVuaWQiOjY3OTE0LCJ1aWQiOjY3OTE0LCJ0aW1lIjoxNjM1NzcyNjM1fQ.zf2wDuAN7iqn98Kl2Kxp1lGjrWdgz3du7esTvNPlNf8",
-          "cookie": "UM_distinctid=17c81b40dbf925-02d3373eb032d5-b7a1438-1fa400-17c81b40dc0b95; CNZZDATA1278924275=1224922299-1634258299-%7C1634258299; PHPSESSID=hi1j9j4jr1sj40uq7v5r9r0aln; Hm_lvt_b62b1005764f95fe323dcaab3ae37284=1634260160,1634522129; Hm_lpvt_b62b1005764f95fe323dcaab3ae37284=1634522129"
-  
-        },
-        data: {
-          tel: "",
-          userpwd: ""
-        }
-      });
-      if (result.status === 302) {
-        ctx.body = await ctx.curl(url, {
-          method: 'GET',
-          headers: {
-            "content-type": "text/html",
-            "User-Agent": randomHead(),
-            "X-Forwarded-For": ip,
-            "referer": refererUrl,
-            "authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcGVuaWQiOjY3OTE0LCJ1aWQiOjY3OTE0LCJ0aW1lIjoxNjM1NzcyNjM1fQ.zf2wDuAN7iqn98Kl2Kxp1lGjrWdgz3du7esTvNPlNf8",
-            "cookie": "UM_distinctid=17c81b40dbf925-02d3373eb032d5-b7a1438-1fa400-17c81b40dc0b95; CNZZDATA1278924275=1224922299-1634258299-%7C1634258299; PHPSESSID=hi1j9j4jr1sj40uq7v5r9r0aln; Hm_lvt_b62b1005764f95fe323dcaab3ae37284=1634260160,1634522129; Hm_lpvt_b62b1005764f95fe323dcaab3ae37284=1634522129"
-          },
-        });
-      }
-      result.data = JSON.parse(result.data.toString())
-      console.log(result.status, '+++++')
-      ctx.body = result;
-    }
+
   //消息
   async chatFriends(){
     //浏览器库
@@ -232,6 +87,7 @@ class SqzfController extends Controller {
     console.log(result.status,'+++++')
     ctx.body = result;
   }
+
   //访客
   async fangFriends(){
     //浏览器库
@@ -314,170 +170,46 @@ class SqzfController extends Controller {
   }
   //消息详情数据
   async messageDetail(){
-    //浏览器库
-    const userAgents = [
-      "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.12) Gecko/20070731 Ubuntu/dapper-security Firefox/1.5.0.12",
-      "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Acoo Browser; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.0.04506)",
-      "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11",
-      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.20 (KHTML, like Gecko) Chrome/19.0.1036.7 Safari/535.20",
-      "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.8) Gecko Fedora/1.9.0.8-1.fc10 Kazehakase/0.5.6",
-      "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.71 Safari/537.1 LBBROWSER",
-      "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 2.0.50727; Media Center PC 6.0) ,Lynx/2.8.5rel.1 libwww-FM/2.14 SSL-MM/1.4.1 GNUTLS/1.2.9",
-      "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)",
-      "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; QQBrowser/7.0.3698.400)",
-      "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; QQDownload 732; .NET4.0C; .NET4.0E)",
-      "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:2.0b13pre) Gecko/20110307 Firefox/4.0b13pre",
-      "Opera/9.80 (Macintosh; Intel Mac OS X 10.6.8; U; fr) Presto/2.9.168 Version/11.52",
-      "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.12) Gecko/20070731 Ubuntu/dapper-security Firefox/1.5.0.12",
-      "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; LBBROWSER)",
-      "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.8) Gecko Fedora/1.9.0.8-1.fc10 Kazehakase/0.5.6",
-      "Mozilla/5.0 (X11; U; Linux; en-US) AppleWebKit/527+ (KHTML, like Gecko, Safari/419.3) Arora/0.6",
-      "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; QQBrowser/7.0.3698.400)",
-      "Opera/9.25 (Windows NT 5.1; U; en), Lynx/2.8.5rel.1 libwww-FM/2.14 SSL-MM/1.4.1 GNUTLS/1.2.9",
-      "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36"
-    ];
-
-
-    //构造请求头-浏览器
-    function randomHead() {
-      return userAgents[
-          Math.floor(Math.random() * (0 - userAgents.length) + userAgents.length)
-      ];
-    }
-
-    //构造请求头-ip
-    function returnIp() {
-      return (
-          Math.floor(Math.random() * (10 - 255) + 255) +
-          "." +
-          Math.floor(Math.random() * (10 - 255) + 255) +
-          "." +
-          Math.floor(Math.random() * (10 - 255) + 255) +
-          "." +
-          Math.floor(Math.random() * (10 - 255) + 255)
-      );
-    }
+    //https://www.sqfcw.com/wapi/index/customIndex.html
+    //"https://www.sqfcw.com/wapi/index/customIndex.html"
     const { ctx } = this;
-    const ids=ctx.request.url.slice(18,130);
-    console.log(ctx.request.url.slice(18,130),'8888888888888888888888888888888888888888888888888888888888');
-    let url = `https://www.sqfcw.com/wapi/im/chatLog.html?chat_id=${ids}&page=1`;
-    let refererUrl = "https://www.sqfcw.com/m/chatPage/chat/chat?title=%E4%B8%AD%E5%8D%97%E7%B4%AB%E4%BA%91%E9%9B%86-%E6%9E%97%E6%96%B9%E9%A9%B0&to_id=tfy_d69570cdcfe264ce_19718&user_id=19718";
-    let ip = returnIp();
-    console.log(ip,'----')
+    console.log(ctx.request.url,'8888888888888888888888888888888888888888888888888888888888');
+    let url = `https://www.sqfcw.com/wapi/im/chatLog.html?chat_id=&page=1`
+    
     let result = await ctx.curl(url, {
       method: 'GET',
       headers: {
         "content-type": "application/json",
-        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1",
-        "from": "3",
-        "referer":refererUrl,
-        "content-type":"application/json",
-        "authorization":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcGVuaWQiOjY3OTcxLCJ1aWQiOjY3OTcxLCJ0aW1lIjoxNjM2MTExOTk4fQ.IvmpnjzyrP8hvzF1gPDxcBh-_IYAAa0I8ZEQHVk7qII",
-          "cookie":"UM_distinctid=17ca7a9010b143-0ed64ecaef8066-39664306-144000-17ca7a9010c63f; CNZZDATA1278924275=1855832823-1634900443-%7C1634900443; Hm_lvt_b62b1005764f95fe323dcaab3ae37284=1634623886,1634782837,1634865488,1634950746; Hm_lpvt_b62b1005764f95fe323dcaab3ae37284=1634950746"
-        
-      },
-      data:{tel: "",
-      userpwd: ""}
+        "User-Agent": ctx.userAgents,
+        "referer":"https://www.sqfcw.com/m/",
+        "from":"3"  
+      }
     });
-    if(result.status===302){
-      ctx.body = await ctx.curl(url, {
-        method: 'GET',
-        headers: {
-          "content-type": "application/json",
-          "User-Agent": randomHead(),
-          "X-Forwarded-For": ip,
-          "referer":refererUrl,
-          "authorization":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcGVuaWQiOjY3OTE0LCJ1aWQiOjY3OTE0LCJ0aW1lIjoxNjM1NzcyNjM1fQ.zf2wDuAN7iqn98Kl2Kxp1lGjrWdgz3du7esTvNPlNf8",
-          "cookie":"UM_distinctid=17c81b40dbf925-02d3373eb032d5-b7a1438-1fa400-17c81b40dc0b95; CNZZDATA1278924275=1224922299-1634258299-%7C1634258299; PHPSESSID=hi1j9j4jr1sj40uq7v5r9r0aln; Hm_lvt_b62b1005764f95fe323dcaab3ae37284=1634260160,1634522129; Hm_lpvt_b62b1005764f95fe323dcaab3ae37284=1634522129"
-        },
-      });
-    }
+    
     result.data = JSON.parse(result.data.toString())
-    console.log(result.status,'+++++')
-    ctx.body = result;
+    console.log(result,'----')
+    ctx.body = result
   }
-  //消息头部详情
-  async messagetext(){
-    //浏览器库
-    const userAgents = [
-      "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.12) Gecko/20070731 Ubuntu/dapper-security Firefox/1.5.0.12",
-      "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Acoo Browser; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.0.04506)",
-      "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11",
-      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.20 (KHTML, like Gecko) Chrome/19.0.1036.7 Safari/535.20",
-      "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.8) Gecko Fedora/1.9.0.8-1.fc10 Kazehakase/0.5.6",
-      "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.71 Safari/537.1 LBBROWSER",
-      "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 2.0.50727; Media Center PC 6.0) ,Lynx/2.8.5rel.1 libwww-FM/2.14 SSL-MM/1.4.1 GNUTLS/1.2.9",
-      "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)",
-      "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; QQBrowser/7.0.3698.400)",
-      "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; QQDownload 732; .NET4.0C; .NET4.0E)",
-      "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:2.0b13pre) Gecko/20110307 Firefox/4.0b13pre",
-      "Opera/9.80 (Macintosh; Intel Mac OS X 10.6.8; U; fr) Presto/2.9.168 Version/11.52",
-      "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.12) Gecko/20070731 Ubuntu/dapper-security Firefox/1.5.0.12",
-      "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; LBBROWSER)",
-      "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.8) Gecko Fedora/1.9.0.8-1.fc10 Kazehakase/0.5.6",
-      "Mozilla/5.0 (X11; U; Linux; en-US) AppleWebKit/527+ (KHTML, like Gecko, Safari/419.3) Arora/0.6",
-      "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; QQBrowser/7.0.3698.400)",
-      "Opera/9.25 (Windows NT 5.1; U; en), Lynx/2.8.5rel.1 libwww-FM/2.14 SSL-MM/1.4.1 GNUTLS/1.2.9",
-      "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36"
-    ];
-
-
-    //构造请求头-浏览器
-    function randomHead() {
-      return userAgents[
-          Math.floor(Math.random() * (0 - userAgents.length) + userAgents.length)
-      ];
-    }
-
-    //构造请求头-ip
-    function returnIp() {
-      return (
-          Math.floor(Math.random() * (10 - 255) + 255) +
-          "." +
-          Math.floor(Math.random() * (10 - 255) + 255) +
-          "." +
-          Math.floor(Math.random() * (10 - 255) + 255) +
-          "." +
-          Math.floor(Math.random() * (10 - 255) + 255)
-      );
-    }
+  
+  async customindex(){
+    //https://www.sqfcw.com/wapi/index/customIndex.html
+    //"https://www.sqfcw.com/wapi/index/customIndex.html"
     const { ctx } = this;
-    const ids=ctx.request.url.slice(16,25);
-    console.log(ctx.request.url.slice(16,25),'77777777777777777777777777777777777777777777');
-    let url = `https://www.sqfcw.com/wapi/im/contactDetails.html?user_id=${ids}`;
-    let refererUrl = "https://www.sqfcw.com/m/chatPage/chat/chat?title=%E4%B8%AD%E5%8D%97%E7%B4%AB%E4%BA%91%E9%9B%86-%E6%9E%97%E6%96%B9%E9%A9%B0&to_id=tfy_d69570cdcfe264ce_19718&user_id=19718";
-    let ip = returnIp();
-    console.log(ip,'----')
+    let url = "https://www.sqfcw.com/wapi/index/customIndex.html"
+    
     let result = await ctx.curl(url, {
       method: 'GET',
       headers: {
-        "content-type": "application/json",
-        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1",
-        "from": "3",
-        "referer":refererUrl,
-        "content-type":"application/json",
-        "authorization":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcGVuaWQiOjY3OTcxLCJ1aWQiOjY3OTcxLCJ0aW1lIjoxNjM2MTExOTk4fQ.IvmpnjzyrP8hvzF1gPDxcBh-_IYAAa0I8ZEQHVk7qII"
-        
-      },
-      data:{tel: "",
-      userpwd: ""}
+        "content-type": "text/html",
+        "User-Agent": ctx.userAgents,
+        "referer":"https://www.sqfcw.com/m/",
+        "from":"3"  
+      }
     });
-    if(result.status===302){
-      ctx.body = await ctx.curl(url, {
-        method: 'GET',
-        headers: {
-          "content-type": "application/json",
-          "User-Agent": randomHead(),
-          "X-Forwarded-For": ip,
-          "referer":refererUrl,
-          "authorization":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcGVuaWQiOjY3OTE0LCJ1aWQiOjY3OTE0LCJ0aW1lIjoxNjM1NzcyNjM1fQ.zf2wDuAN7iqn98Kl2Kxp1lGjrWdgz3du7esTvNPlNf8",
-          "cookie":"UM_distinctid=17c81b40dbf925-02d3373eb032d5-b7a1438-1fa400-17c81b40dc0b95; CNZZDATA1278924275=1224922299-1634258299-%7C1634258299; PHPSESSID=hi1j9j4jr1sj40uq7v5r9r0aln; Hm_lvt_b62b1005764f95fe323dcaab3ae37284=1634260160,1634522129; Hm_lpvt_b62b1005764f95fe323dcaab3ae37284=1634522129"
-        },
-      });
-    }
+    
     result.data = JSON.parse(result.data.toString())
-    console.log(result.status,'+++++')
-    ctx.body = result;
+    console.log(result,'----')
+    ctx.body = result
   }
   async login(){
     const { ctx } = this;
@@ -669,86 +401,6 @@ class SqzfController extends Controller {
     })
     //ctx.body = "支付接口拉起失败"
   }
-  // 验证码
-    async yanzheng(){
-      //浏览器库
-      const userAgents = [
-        "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.12) Gecko/20070731 Ubuntu/dapper-security Firefox/1.5.0.12",
-        "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Acoo Browser; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.0.04506)",
-        "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11",
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.20 (KHTML, like Gecko) Chrome/19.0.1036.7 Safari/535.20",
-        "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.8) Gecko Fedora/1.9.0.8-1.fc10 Kazehakase/0.5.6",
-        "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.71 Safari/537.1 LBBROWSER",
-        "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 2.0.50727; Media Center PC 6.0) ,Lynx/2.8.5rel.1 libwww-FM/2.14 SSL-MM/1.4.1 GNUTLS/1.2.9",
-        "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)",
-        "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; QQBrowser/7.0.3698.400)",
-        "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; QQDownload 732; .NET4.0C; .NET4.0E)",
-        "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:2.0b13pre) Gecko/20110307 Firefox/4.0b13pre",
-        "Opera/9.80 (Macintosh; Intel Mac OS X 10.6.8; U; fr) Presto/2.9.168 Version/11.52",
-        "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.12) Gecko/20070731 Ubuntu/dapper-security Firefox/1.5.0.12",
-        "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; LBBROWSER)",
-        "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.8) Gecko Fedora/1.9.0.8-1.fc10 Kazehakase/0.5.6",
-        "Mozilla/5.0 (X11; U; Linux; en-US) AppleWebKit/527+ (KHTML, like Gecko, Safari/419.3) Arora/0.6",
-        "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; QQBrowser/7.0.3698.400)",
-        "Opera/9.25 (Windows NT 5.1; U; en), Lynx/2.8.5rel.1 libwww-FM/2.14 SSL-MM/1.4.1 GNUTLS/1.2.9",
-        "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36"
-      ];
-  
-      //构造请求头-浏览器
-      function randomHead() {
-        return userAgents[
-            Math.floor(Math.random() * (0 - userAgents.length) + userAgents.length)
-        ];
-      }
-      //构造请求头-ip
-      function returnIp() {
-        return (
-            Math.floor(Math.random() * (10 - 255) + 255) +
-            "." +
-            Math.floor(Math.random() * (10 - 255) + 255) +
-            "." +
-            Math.floor(Math.random() * (10 - 255) + 255) +
-            "." +
-            Math.floor(Math.random() * (10 - 255) + 255)
-        );
-      }
-      const { ctx } = this;
-      let url = "https://www.sqfcw.com/wapi/im/visitorList?page=1&keywords="
-      let refererUrl = "https://www.sqfcw.com/m/pages/index/chat_list";
-      let ip = returnIp();
-      console.log(ip,'----')
-      let result = await ctx.curl(url, {
-        method: 'GET',
-        headers: {
-          "content-type": "text/html",
-          "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1",
-          "from": "3",
-          "referer":refererUrl,
-          "content-type":"application/json",
-          "authorization":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcGVuaWQiOjY3OTcxLCJ1aWQiOjY3OTcxLCJ0aW1lIjoxNjM2MTExOTk4fQ.IvmpnjzyrP8hvzF1gPDxcBh-_IYAAa0I8ZEQHVk7qII",
-            "cookie":"Hm_lvt_b62b1005764f95fe323dcaab3ae37284=1634555312,1634623886,1634782837,1634865488; Hm_lpvt_b62b1005764f95fe323dcaab3ae37284=1634880608"
-          
-        },
-        data:{tel: "",
-        userpwd: ""}
-      });
-      if(result.status===302){
-        ctx.body = await ctx.curl(url, {
-          method: 'GET',
-          headers: {
-            "content-type": "text/html",
-            "User-Agent": randomHead(),
-            "X-Forwarded-For": ip,
-            "referer":refererUrl,
-            "authorization":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcGVuaWQiOjY3OTcxLCJ1aWQiOjY3OTcxLCJ0aW1lIjoxNjM2MTExOTk4fQ.IvmpnjzyrP8hvzF1gPDxcBh-_IYAAa0I8ZEQHVk7qII",
-            "cookie":"Hm_lvt_b62b1005764f95fe323dcaab3ae37284=1634555312,1634623886,1634782837,1634865488; PHPSESSID=s6fvliualsvrmv1n3oig26iu4u; UM_distinctid=17ca7a9010b143-0ed64ecaef8066-39664306-144000-17ca7a9010c63f; CNZZDATA1278924275=1855832823-1634900443-%7C1634900443; Hm_lpvt_b62b1005764f95fe323dcaab3ae37284=1634901508"
-          },
-        });
-      }
-      result.data = JSON.parse(result.data.toString())
-      console.log(result.status,'+++++')
-      ctx.body = result;
-    }
 }
 
 module.exports = SqzfController;
