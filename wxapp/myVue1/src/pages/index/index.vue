@@ -95,12 +95,7 @@
               >
                 <view class="itemChild">
                   <text
-                    :class="
-                      item.level == 3
-                        ? 'img3'
-                        : item.level == 2
-                        ? 'img2'
-                        : 'img1'
+                    :class="item.level == 3? 'img3': item.level == 2? 'img2': 'img1'
                     "
                     >{{
                       item.level == 3
