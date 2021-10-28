@@ -18,8 +18,8 @@ export default {
         'pages/agent/agent',
         'pages/yushou/index',
         'online/liveList',
-        'needPage/rest_house/rest_house',
-        'needPage/buy_house/buy_house',
+        // 'needPage/rest_house/rest_house',
+        // 'needPage/buy_house/buy_house',
         'pages/tudi/index',
         // 'pages/groups/groups',
         'pages/calculator/calculator'
