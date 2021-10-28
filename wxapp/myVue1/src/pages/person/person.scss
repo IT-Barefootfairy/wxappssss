@@ -1,0 +1,232 @@
+.person 
+{
+    width: 100%;
+    .header 
+    {
+        width: 100%;
+        height: 10.5rem;
+        position: relative;
+        .black 
+        {
+            width: 100%;
+            height: 10.5rem;
+            background-color: #1e1f25;
+            z-index: -1;
+        }
+        .card 
+        {
+            width: 87%;
+            height: 12rem;
+            background-image: linear-gradient(135deg, #f0b683, #ffeede 64%, #f0b683);
+            color: #835125;
+            background-color: #f3f3f3;
+            border-radius: 25rpx;
+            margin: 0 auto;
+            position: absolute;
+            top: 33%;
+            left: 13%;
+            z-index: 99;
+            transform: translate(-8%,-8%);
+            .card_top
+            {
+            
+                width: 95%;
+                display: flex;
+                position: relative;
+                .girls 
+                {
+                    width: 3.7rem;
+                    height: 3.7rem;
+                    border-radius: 50%;
+                    margin: 20px 30px;
+                }
+                .text_left 
+                {
+                    flex: 1;
+                    overflow: auto;
+                    margin: 35px 0px;
+                    position: absolute;
+                    top: 5px;
+                    left: 27%;
+                    .text_bottom 
+                    {
+                        font-size: 0.3rem;
+                        font-size: 0.8rem;
+                        padding: 9px 0 20px 0;
+                        overflow: hidden;
+                        text-overflow:ellipsis;
+                        white-space: nowrap;
+                        width: 80%;
+                    }
+                    
+                    .text_top 
+                    {
+                        display: flex;
+                        justify-content: space-around;
+                        flex-flow: row wrap;
+                        align-items: center;
+                        text:nth-of-type(1)
+                        {
+                            font-size: 1.1rem;
+                        }
+                        .huangg
+                        {
+                            width: 1.2rem;
+                            height: 1.2rem;
+                            line-height: 1.2rem;
+                            text-align: center;
+                            color: #fff;
+                            font-size: 0.8rem;
+                            margin: 0 15px;
+                        }
+                        text:nth-of-type(2)
+                        {
+                            
+                            color: #ff656b;
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+            }
+            .card_bottom_list 
+            {
+                width: 100%;
+                height: 6rem;
+                position: relative;
+                .text_first 
+                {
+                    display: flex;
+                    position: relative;
+                    width: 100%;
+                    justify-content: space-around;
+                    align-items: center;
+                    flex-flow: row wrap;
+                    padding: 28px 0;
+                    .phone 
+                    {
+                        font-size: 0.8rem;
+                        position: relative;
+                        .phone_img 
+                        {
+                            width: 1.5rem;
+                            position: absolute;
+                            top: -4px;
+                            left: -55px;
+                            height: 1.5rem;
+                            line-height: 1.5rem;
+                            text-align: center;
+                            font-size: 0.8rem;
+                        }
+                    }
+                    .weixin 
+                    {
+                        font-size: 0.8rem;
+                        position: relative;
+                        .weixin_img 
+                        {
+                            width: 1.5rem;
+                            position: absolute;
+                            top: -4px;
+                            left: -58px;
+                            height: 1.5rem;
+                            line-height: 1.5rem;
+                            text-align: center;
+                            font-size: 0.8rem;
+                        }
+                    }
+                    .more 
+                    {
+                        font-size: 0.8rem;
+                        position: relative;
+                        .more_img 
+                        {
+                            width: 1.5rem;
+                            position: absolute;
+                            top: -4px;
+                            left: -52px;
+                            height: 1.5rem;
+                            line-height: 1.5rem;
+                            text-align: center;
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+                .text_first::after
+                {
+                    content: "";
+                    box-sizing: border-box;
+                    position: fixed;
+                    left: 12%;
+                    top: 160px;
+                    width:160%;
+                    border-bottom: 5px solid rgba(0,0,0,.05);
+                    transform: scale(0.5);
+                    transform-origin: 0 0;
+                }
+                .text_first2
+                {
+                    display: flex;
+                    position: relative;
+                    width: 100%;
+                    justify-content: space-around;
+                    align-items: center;
+                    flex-flow: row wrap;
+                    margin: -25px -15px;
+                    text-align: center;
+                    font-weight: 700;
+                    .look_num
+                    {
+                        font-size: 0.8rem;
+                        position: relative;
+                    }
+                    .zx_num
+                    {
+                        font-size: 0.8rem;
+                        position: relative;
+                    }
+                    .like_num 
+                    {
+                        font-size: 0.8rem;
+                        position: relative;
+                    }
+                }
+                .text_last 
+                {
+                    position: absolute;
+                    bottom: 28rpx;
+                    font-size: 0.9rem;
+                    display: flex;
+                    font-size: 0.8rem;
+                    left: 8%;
+                    width: 85%;
+                    text-align: center;
+                    .photos 
+                    {
+                        background-color: #ff656b;
+                        width: 2rem;
+                        height: 1rem;
+                        position: fixed;
+                        bottom: 8rpx;
+                        .first_photos 
+                        {
+                            width: 1rem;
+                            height: 1rem;
+                            border-radius: 50%;
+                            margin-left: 16px;
+
+                        }
+                        
+                    }
+                    text:nth-of-type(2)
+                    {
+                        position: fixed;
+                        bottom: 8px;
+                        left: 140px;
+                    }
+                }
+            }
+                
+        }
+    }
+    
+}

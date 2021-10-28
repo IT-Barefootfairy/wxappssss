@@ -27,6 +27,8 @@ export default {
         // 'pages/groups/groups',
         'pages/calculator/calculator',
         'pages/details/details',
+        'pages/mores/mores',
+        'pages/person/person',
     ],
     window: {
         backgroundTextStyle: 'dark',

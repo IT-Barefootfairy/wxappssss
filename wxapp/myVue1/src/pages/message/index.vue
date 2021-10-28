@@ -1,20 +1,22 @@
 <template>
   <view class="index">
     <view class="main">
-      <view class="header">
-        <image src="../../static/24gf-trash2.png" class="trash" />
-        <text>
-          {{ del }}
-        </text>
-        <text>{{ msg }}</text>
-      </view>
-      <view class="save">
-        <text>关注宿迁房产网公众号可随时接收聊天消息</text>
-        <text @tap="getSave">关注</text>
-      </view>
-      <view class="inputs">
-        <image src="../../static/sou.png" class="searchs" />
-        <input type="text" placeholder="请输入昵称或手机号" />
+      <view class="main_top">
+        <view class="header">
+          <image src="../../static/24gf-trash2.png" class="trash" />
+          <text>
+            {{ del }}
+          </text>
+          <text>{{ msg }}</text>
+        </view>
+        <view class="save">
+          <text>关注宿迁房产网公众号可随时接收聊天消息</text>
+          <text @tap="getSave">关注</text>
+        </view>
+        <view class="inputs">
+          <image src="../../static/sou.png" class="searchs" />
+          <input type="text" placeholder="请输入昵称或手机号" />
+        </view>
       </view>
 
       <!-- 切换 -->
@@ -30,15 +32,34 @@
               class="tab-content"
               v-for="(item, index) in firends"
               :key="index"
-              @tap="goDetails(item.chat_id)"
+              @tap="goDetails(item.chat_id, item.user_id)"
             >
-              <view class="tab_text" @tap="goDetails">
-                <image :src="item.headimage" class="girls" />
+              <view class="tab_text">
+                <view class="img_girls">
+                  <image :src="item.headimage" class="girls" />
+                </view>
+
                 <view class="text_left">
                   <view class="text_top">
-                    <text>{{ item.nickname }}</text>
-                    <text>{{ item.alias_name }}</text>
-                    <text>{{ item.chat.time }}</text>
+                    <view class="text_top_first">
+                      <view class="text_top_name">
+                        {{ item.nickname }}
+                      </view>
+                      <text
+                        :class="
+                          item.role == 2
+                            ? 'oranges'
+                            : item.role == 3
+                            ? 'active'
+                            : ''
+                        "
+                      >
+                        {{ item.alias_name }}
+                      </text>
+                    </view>
+                    <view class="text_top_second">
+                      <text>{{ item.chat.time }}</text>
+                    </view>
                   </view>
                   <view class="text_bottom">{{ item.unread }}</view>
                 </view>
@@ -52,7 +73,10 @@
               :key="index"
             >
               <view class="tab_text">
-                <image :src="item.prelogo" class="girls" />
+                <view class="img_girls">
+                  <image :src="item.prelogo" class="girls" />
+                </view>
+
                 <view class="text_left">
                   <view class="text_top">
                     <text>{{ item.cname }}</text>
@@ -73,7 +97,12 @@
       <!-- 弹框 -->
       <view :class="isVisiable ? 'active dialog' : 'dialog'">
         <view class="tan">
-          <image src="../../static/ewm.jpeg" class="ewm" />
+          <canvas
+            style="width: 250px; height: 250px; top: 8%; left: 11%"
+            canvas-id="myQrcode"
+          >
+          </canvas>
+          <image src="../../static/homesss.png" class="ewm" />
           <text>长按保存图片</text>
           <text>相册选取，识别关注</text>
         </view>
@@ -85,6 +114,7 @@
 
 <script>
 import { getPerson, getFangPerson } from "../../utils/api";
+import drawQrcode from "weapp-qrcode";
 import { AtTabs, AtTabsPane } from "taro-ui-vue3";
 import { onMounted, reactive, ref, toRefs } from "vue";
 import "taro-ui-vue3/dist/style/components/tabs.scss";
@@ -108,13 +138,18 @@ export default {
       getClose: () => {
         dataIndex.isVisiable = false;
       },
-      goDetails: (id) => {
-        console.log(id,1111111111111111);
+      goDetails: (chat_id, user_id) => {
+        // console.log(chat_id,, 1111111111111111);
         Taro.navigateTo({
-          url:`/pages/details/details?id=${id}`,
+          url: `/pages/details/details?chat_id=${chat_id}&user_id=${user_id}`,
         });
-        
       },
+      //跳转个人信息页面
+      // goPersons:(user_id)=>{
+      //   Taro.navigateTo({
+      //     url:`/pages/mores/mores?user_id=${user_id}`
+      //   })
+      // }
     });
     const msg = ref("消息");
     const del = ref("清除未读");
@@ -127,6 +162,12 @@ export default {
       getFangPerson().then((res) => {
         console.log(res.data.list, "222222222222222");
         dataIndex.Fangfirends = res.data.list;
+      });
+      drawQrcode({
+        width: 250,
+        height: 250,
+        canvasId: "myQrcode",
+        text: "https://music.163.com/",
       });
     });
     return {
