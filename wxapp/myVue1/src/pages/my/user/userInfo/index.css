@@ -1,0 +1,76 @@
+.userinfo {
+  width: 100vw;
+  height: 100vh;
+  background: #f7f7f7;
+  font-size: 12PX;
+}
+
+.item_right_img {
+  width: 30PX;
+  height: 30PX;
+  margin-right: 10PX;
+}
+
+.userInfo_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 12PX;
+  height: 35PX;
+  background: #fff;
+  margin-bottom: 12PX;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.userInfo_item .item_right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.userInfo_item .item_right .tel_change {
+  width: 73PX;
+  height: 20PX;
+  border-radius: 10PX;
+  border: 1px solid #ff656b;
+  color: #ff656b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.item_right_box {
+  width: 120PX;
+}
+
+.item_right_box .item_right_inp {
+  text-align: right;
+}
+
+.user_sendbtn {
+  width: 85%;
+  background: #ff656b;
+  border-radius: 16PX;
+  border: none;
+  outline: none;
+  height: 35PX;
+  font-weight: 800;
+}
+/*# sourceMappingURL=index.css.map */

@@ -12,6 +12,7 @@
 </view>
 </view>
  </view>
+<<<<<<< HEAD
  <view class="member_person">
   <view class="member_person_header">
       个人VIP会员
@@ -46,6 +47,15 @@ import './index.scss';
 const checked=ref(false);
 const changeChecked=()=>{
     checked.value=!checked.value
+=======
+     </view>  
+</template>
+
+<script>
+import './index.scss';
+export default {
+
+>>>>>>> bfbdb101e59e66f43bf73666301621c796fbd854
 }
 </script>
 
