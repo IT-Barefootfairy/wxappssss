@@ -1,7 +1,9 @@
 export default {
     pages: [
-        'pages/index/index',
+        'pages/findhouse/brow/index',
+        'needPage/login/index',
         'pages/findhouse/index',
+        'pages/index/index',
         'pages/issue/index',
         'pages/message/index',
         'pages/my/index',
@@ -34,7 +36,10 @@ export default {
         navigationBarTitleText: '宿迁找房',
         navigationBarTextStyle: 'black',
         enablePullDownRefresh: true,
-        onReachBottomDistance:0//触底距离a
+        onReachBottomDistance: 0,//触底距离a,
+        // usingComponents: {
+        //     'van-button': '../../components/vant-weapp/dist/button/index'
+        //   }
     },
     "tabBar": {
         "color": "#000",
