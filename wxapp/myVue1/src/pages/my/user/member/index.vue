@@ -17,7 +17,7 @@
       个人VIP会员
       </view>   
  <view class="member_person_con">
-    <view><text id="jxiaohei">个人VIP会员权益:</text>每天发布一条信息;每天可刷新1条信息；总共可发布一条系信息</view>
+    <view><text class="jxiaohei">个人VIP会员权益:</text>每天发布一条信息;每天可刷新1条信息；总共可发布一条系信息</view>
      <view class="dier">
      升级后可免费查看房源电话
  </view>
@@ -27,16 +27,25 @@
      <view>原价68元</view>
      <view class="qian">￥10</view>
  </view>
+ <view class="use">使用金币或余额</view>
+ <view class="usemoney">
+     <view>使用余额(剩余0.00)</view>
+      <view class="member-checkbox" @tap="changeChecked">{{checked?'√':''}}</view>
+ </view>
+ <view class="kaoyou">还需支付10.00元</view>
+ <AtButton type="primary" class="bybtn">去支付</AtButton>
  </view>
 
  </view>
      </view>  
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
 import './index.scss';
-export default {
-
+const checked=ref(false);
+const changeChecked=()=>{
+    checked.value=!checked.value
 }
 </script>
 

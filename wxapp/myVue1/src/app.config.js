@@ -1,5 +1,6 @@
 export default {
     pages: [
+        'pages/my/user/exchange/index',
         'pages/my/user/member/index',
         'pages/index/index',
         'pages/findhouse/index',

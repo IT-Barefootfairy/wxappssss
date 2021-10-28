@@ -1,3 +1,4 @@
+
 .member{
     width: 100vw;
     height: 100vh;
@@ -69,7 +70,7 @@
     height: 332PX;
     margin: 0 auto;
     margin-top: 20PX;
-    background: #0f0;
+    // background: #0f0;
     // padding-top: 12PX;
     padding-bottom: 12PX;
     font-size: 10PX;
@@ -77,8 +78,8 @@
 
 }
 }
-#jxiaohei{
-    font-size: 12PX;
+.member_person_con .jxiaohei{
+    font-size: 11PX;
     color: #000 !important;
     font-weight: 600;
 }
@@ -96,7 +97,7 @@
     background-color: #f3f3f3;
     text-align: center;
     position: relative;
-    margin-bottom: 12PX;
+    margin-bottom: 16PX;
     height: 60PX;
     background-color: #fcf1e2;
     border: 3PX solid #e5ba72;
@@ -110,4 +111,35 @@
     font-weight: 500;
     margin-left: -1PX;
     height: 27PX;
+}
+.use{
+    font-size: 16PX;
+    font-weight: 600;
+    color: #000;
+}
+.usemoney{
+    width: 100%;
+    height: 20PX;
+    display: flex;
+    justify-content: space-between;
+}
+.member-checkbox{
+    border: 1px solid #CCC;
+    width: 15PX;
+    height: 15PX;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(251, 101, 106);
+    font-weight: 600;
+}
+.kaoyou{
+    margin-top: 12PX;
+    text-align: right;
+}
+.bybtn{
+    background-image: linear-gradient(135deg,#e5ba72,#f4dbb3);
+    color: #333;
+    border-radius: 22PX;
+    border: none;
 }

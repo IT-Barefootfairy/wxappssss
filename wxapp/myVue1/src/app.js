@@ -3,10 +3,12 @@ import { createUI } from 'taro-ui-vue3'
 import { 
   AtButton, 
   AtInput, 
-  AtTabs 
+  AtTabs ,
+  AtCheckbox 
 } from 'taro-ui-vue3/lib'
 
 // 引用上述组件对应的样式文件
+import "taro-ui-vue3/dist/style/components/checkbox.scss";
 import 'taro-ui-vue3/dist/style/components/button.scss'
 import 'taro-ui-vue3/dist/style/components/input.scss'
 import 'taro-ui-vue3/dist/style/components/tabs.scss'
@@ -31,7 +33,8 @@ const App = createApp({
 const tuv3 = createUI({
     AtButton, 
     AtInput, 
-    AtTabs
+    AtTabs,
+    // AtCheckbox
   })
   App.use(tuv3)
 
