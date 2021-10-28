@@ -24,7 +24,6 @@
 
 .details .main .main_top {
   width: 85%;
-  height: 9rem;
   background-color: #fff;
   border-radius: 10rpx;
   position: absolute;
@@ -36,21 +35,13 @@
 
 .details .main .main_top .main_top_title {
   width: 95%;
-  height: 7rem;
   display: flex;
-  border-bottom: 1px solid #d8d8d8;
   position: relative;
+  display: none;
 }
 
-.details .main .main_top .main_top_title .text_bottom_list {
-  display: flex;
-  width: 100%;
-  position: absolute;
-  top: 5rem;
-  left: 1rem;
-  justify-content: space-around;
-  align-items: center;
-  flex-flow: row wrap;
+.details .main .main_top .main_top_title.active {
+  display: block;
 }
 
 .details .main .main_top .main_top_title .girls {
@@ -64,6 +55,9 @@
   flex: 1;
   overflow: auto;
   margin: 35px 0px;
+  position: absolute;
+  top: 5px;
+  left: 23%;
 }
 
 .details .main .main_top .main_top_title .text_left .text_bottom {
@@ -88,10 +82,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 33%;
+  width: 35%;
   font-weight: 700;
   font-size: 1.1rem;
-  margin-left: -28px;
 }
 
 .details .main .main_top .main_top_title .text_left .text_top .huangg {
@@ -101,10 +94,99 @@
   text-align: center;
   color: #fff;
   font-size: 0.8rem;
+  margin: 0 15px;
 }
 
 .details .main .main_top .main_top_title .text_left .text_top text:nth-of-type(2) {
   color: #ff656b;
   font-size: 0.8rem;
-  margin-left: -28px;
+}
+
+.details .main .main_top .text_bottom_list {
+  width: 100%;
+  height: 6rem;
+  position: relative;
+}
+
+.details .main .main_top .text_bottom_list .text_first {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row wrap;
+  padding: 28px 0;
+}
+
+.details .main .main_top .text_bottom_list .text_first .phone {
+  font-size: 0.8rem;
+  color: #666;
+  position: relative;
+}
+
+.details .main .main_top .text_bottom_list .text_first .phone .phone_img {
+  width: 1.5rem;
+  position: absolute;
+  top: -4px;
+  left: -55px;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.details .main .main_top .text_bottom_list .text_first .weixin {
+  font-size: 0.8rem;
+  color: #666;
+  position: relative;
+}
+
+.details .main .main_top .text_bottom_list .text_first .weixin .weixin_img {
+  width: 1.5rem;
+  position: absolute;
+  top: -4px;
+  left: -58px;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.details .main .main_top .text_bottom_list .text_first .more {
+  font-size: 0.8rem;
+  color: #666;
+  position: relative;
+}
+
+.details .main .main_top .text_bottom_list .text_first .more .more_img {
+  width: 1.5rem;
+  position: absolute;
+  top: -4px;
+  left: -52px;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.details .main .main_top .text_bottom_list .text_first::after {
+  content: "";
+  box-sizing: border-box;
+  position: fixed;
+  left: 13%;
+  top: 360px;
+  width: 150%;
+  border-bottom: 6px solid #f5f5f5;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+}
+
+.details .main .main_top .text_bottom_list .text_last {
+  position: absolute;
+  bottom: 28px;
+  font-size: 0.9rem;
+  color: #ff706f;
+  left: 8%;
+  width: 85%;
+  text-align: center;
 }
