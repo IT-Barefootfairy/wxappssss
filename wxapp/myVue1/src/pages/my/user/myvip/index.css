@@ -1,0 +1,180 @@
+.my_vip {
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #1e1f25;
+}
+
+.my_vip .myvip_msg_box {
+  height: 40%;
+  position: relative;
+  padding: 1.3rem;
+  padding-bottom: 0;
+}
+
+.my_vip .myvip_msg_box .myvip_user_card {
+  width: 80vw;
+  padding: 12PX;
+  height: 120.6PX;
+  padding: 12PX;
+  border-radius: 12PX;
+  background-image: linear-gradient(135deg, #e5ba72, #f4dbb3);
+  -webkit-box-shadow: 0 2PX 6PX 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 2PX 6PX 0 rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.my_vip .myvip_msg_box .myvip_user_card .myvip_card_top {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.my_vip .myvip_msg_box .myvip_user_card .myvip_card_top .commenvip {
+  width: 75PX;
+  height: 20PX;
+  margin-left: 10PX;
+  font-size: 11PX;
+  background-color: rgba(0, 0, 0, 0.35);
+  color: #d8d8d8;
+  border-radius: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.my_vip .myvip_msg_box .myvip_user_card .myvip_card_top .commenvip .card_littlevip {
+  width: 12PX;
+  height: 12PX;
+}
+
+.my_vip .myvip_msg_box .myvip_user_card .myvip_card_top .commenvip:after {
+  content: "";
+  position: absolute;
+  height: 0.5PX;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  background-color: rgba(0, 0, 0, 0.09);
+}
+
+.my_vip .myvip_msg_box .myvip_user_card .myvip_card_user {
+  width: 50PX;
+  height: 50PX;
+  border-radius: 50%;
+}
+
+.myvip_bottom {
+  font-size: 9PX;
+  height: 90PX;
+  color: #a06b14;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.myvip_bottom .card_open {
+  background: #fff;
+  width: 80PX;
+  height: 24PX;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 25px;
+}
+
+.card_rights {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e5ba72;
+  height: 40PX;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10PX;
+}
+
+.card_rights .VIP {
+  font-size: 0.5rem;
+  color: #322e2d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card_release {
+  padding-top: 18PX;
+  padding-left: 18PX;
+  padding-right: 18PX;
+  height: calc(100% - 40PX - 222.5PX);
+  background-color: #383535;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card_release .release_btn {
+  font-size: 12PX;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+      flex: 1;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+      align-items: center;
+  text-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  height: 30PX;
+  line-height: 30PX;
+  background: rgba(244, 219, 179, 0.4);
+  border: 1px solid #e5ba72;
+  border-radius: 4PX;
+  border-radius: 4PX;
+  color: #e5ba72;
+}
+
+.release_btn:nth-child(2) {
+  margin-left: 12PX;
+}
+
+.po {
+  position: absolute;
+  bottom: 160PX;
+  font-size: 10PX;
+  color: #ccc;
+  left: 20PX;
+}
+/*# sourceMappingURL=index.css.map */

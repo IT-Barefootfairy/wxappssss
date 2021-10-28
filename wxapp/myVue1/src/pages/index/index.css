@@ -6,9 +6,15 @@
 .home_container .home_header_container {
   width: 100%;
   height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .home_container .home_header_container .input_container {
@@ -16,8 +22,13 @@
   height: 2rem;
   margin-left: 20px;
   margin-top: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   background-color: #F5F5F5;
 }
 
@@ -35,6 +46,8 @@
 .home_container .home_header_container .input_map {
   width: 4rem;
   height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 0.5rem;
   margin-left: 0.5rem;
@@ -59,8 +72,11 @@
 .home_container .home_link_container .swiper swiper-item {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .home_container .home_link_container .swiper swiper-item .slid_item1 {
@@ -119,9 +135,16 @@
 .list_container .benyuefangjia .top {
   width: 100%;
   height: 2.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .list_container .benyuefangjia .top .title {
@@ -134,6 +157,7 @@
 .list_container .benyuefangjia .top .zaobao {
   width: 8rem;
   height: 2rem;
+  background-image: -webkit-gradient(linear, left top, right top, from(#FF5D01), to(#FF9C02));
   background-image: linear-gradient(to right, #FF5D01, #FF9C02);
   display: block;
   border-radius: 1rem;
@@ -223,8 +247,11 @@
 
 .list_container .benyuefangjia .box .gundong .swi .swiItem .itemChild {
   display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .list_container .benyuefangjia .box .gundong .swi .swiItem .itemChild .img {
@@ -265,6 +292,7 @@
   text-align: center;
   line-height: 1.5rem;
   color: #fff;
+  background-image: -webkit-gradient(linear, left top, right top, from(#FF766A), to(#FDA85F));
   background-image: linear-gradient(to right, #FF766A, #FDA85F);
   margin-top: 0.2rem;
 }
@@ -299,8 +327,12 @@
 }
 
 .hotBuild .hotBuildTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .hotBuild .hotBuildTitle .title {
@@ -325,6 +357,8 @@
   border-bottom: 0.5px solid gray;
   margin-top: 0.5rem;
   padding-bottom: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -352,9 +386,13 @@
 }
 
 .hotBuild .hotBuildList .item .rightside .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 14rem;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .hotBuild .hotBuildList .item .rightside .head .title {
@@ -386,6 +424,8 @@
 
 .hotBuild .hotBuildList .item .rightside .build_type {
   display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 0.2rem 0;
 }
@@ -398,6 +438,8 @@
 }
 
 .hotBuild .hotBuildList .item .rightside .discount {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -418,3 +460,4 @@
   color: #FF766A;
   font-size: 0.8rem;
 }
+/*# sourceMappingURL=index.css.map */

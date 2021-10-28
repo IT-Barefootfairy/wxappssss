@@ -1,0 +1,199 @@
+.my {
+  width: 100vw;
+  height: 100vh;
+  background: #f7f7f7;
+}
+
+.my .header_bg {
+  width: 100vw;
+  height: 8.3rem;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#f7918f), to(#fb656a));
+  background-image: linear-gradient(0deg, #f7918f, #fb656a);
+}
+
+.my .my_card {
+  font-size: 12PX;
+  padding: 12PX;
+  width: 77vw;
+  height: 7.2rem;
+  background: #fff;
+  -webkit-box-shadow: 0px 0px 20px #ccc;
+          box-shadow: 0px 0px 20px #ccc;
+  border-radius: .6rem;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.44rem;
+}
+
+.my .my_card .card_foot {
+  width: 100%;
+  height: 40PX;
+  margin-top: 12PX;
+  padding-top: 12PX;
+  font-size: 10PX;
+  border-top: 1px solid #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.my .my_card .card_foot .card_foot_item {
+  width: 44PX;
+  height: 30PX;
+  text-align: center;
+}
+
+.my .my_card .card_foot .card_foot_item .shu {
+  color: #fb656a;
+  font-weight: 800;
+  font-size: 13PX;
+}
+
+.my .my_card .card_author {
+  width: 100%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.my .my_card .card_author .card_img {
+  width: 50PX;
+  height: 50PX;
+  border-radius: 50%;
+}
+
+.my .my_card .card_author .card_msg .card_net {
+  margin-bottom: 8PX;
+  font-weight: 800;
+}
+
+.my .my_card .card_author .card_msg .card_people {
+  width: 72PX;
+  height: 17PX;
+  border-radius: 20PX;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.my .my_card .card_author .card_msg .card_member {
+  width: 13PX;
+  height: 13PX;
+}
+
+.my .my_card .card_author .agent {
+  width: 73PX;
+  height: 25PX;
+  background: #fb656a;
+  border-radius: 16PX;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card_option {
+  background: #fff;
+  height: 56PX;
+  padding-top: 44PX;
+  padding-left: 8PX;
+  padding-right: 8PX;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.card_option .item_img {
+  width: 22PX;
+  height: 25PX;
+}
+
+.card_option .item_con {
+  font-size: 12PX;
+}
+
+.my_send {
+  padding: 22PX;
+  height: 20%;
+  background: #fff;
+  margin-top: 10PX;
+}
+
+.my_send .send_header {
+  height: 42PX;
+  font-size: 14PX;
+}
+
+.my_send .send_type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10PX;
+}
+
+.my_send .send_item {
+  text-align: center;
+  font-size: 12PX;
+  line-height: 20PX;
+}
+
+.my_send .send_item .send_item_img {
+  width: 20PX;
+  height: 24PX;
+}
+
+.my_order {
+  background: #f7f7f7;
+}
+
+.order_item {
+  height: 50PX;
+  font-size: 12PX;
+  padding-left: 22PX;
+  padding-right: 22PX;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #fff;
+  margin-top: 10PX;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.order_item .dialog-close {
+  font-size: 14PX;
+  color: #ccc;
+}
+/*# sourceMappingURL=index.css.map */
