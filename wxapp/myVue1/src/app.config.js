@@ -21,8 +21,12 @@ export default {
         // 'needPage/rest_house/rest_house',
         // 'needPage/buy_house/buy_house',
         'pages/tudi/index',
+        'pages/my/user/member/index',
+        "pages/my/user/myvip/index", 
+        "pages/my/user/userInfo/index",
         // 'pages/groups/groups',
-        'pages/calculator/calculator'
+        'pages/calculator/calculator',
+        'pages/details/details',
     ],
     window: {
         backgroundTextStyle: 'dark',
@@ -30,7 +34,7 @@ export default {
         navigationBarTitleText: '宿迁找房',
         navigationBarTextStyle: 'black',
         enablePullDownRefresh: true,
-        onReachBottomDistance: 0
+        onReachBottomDistance:0//触底距离a
     },
     "tabBar": {
         "color": "#000",

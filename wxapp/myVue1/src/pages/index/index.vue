@@ -46,7 +46,6 @@
         </swiper-item>
       </swiper>
     </view>
-
     <view class="list_container">
       <!-- <button @tap="onSlideChange">{{dataIndex.benyuefangjia.title}}</button> -->
       <view class="benyuefangjia">
