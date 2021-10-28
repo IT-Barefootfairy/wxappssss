@@ -1,8 +1,5 @@
 <template>
   <view class="index">
-<<<<<<< HEAD
-    <text>{{ id }}</text>
-=======
     <view class="head">
       <swiper class="swiper" :autoplay="true" :interval="3000" :circular="true">
         <swiper-item class="item" v-for="item in headImage" :key="item">
@@ -179,29 +176,21 @@
         </view>
       </view>
     </view>
->>>>>>> bfbdb101e59e66f43bf73666301621c796fbd854
   </view>
 </template>
 
 <script>
 import { onMounted, reactive, toRefs } from "vue";
 import Taro from "@tarojs/taro";
-<<<<<<< HEAD
-import "./index.scss";
-import {gethotDetail} from '../../utils/api'
-=======
 import "./detail.scss";
 import { gethotDetail } from "../../utils/api";
 import { AtTimeline, AtAvatar } from "taro-ui-vue3";
 import "taro-ui-vue3/dist/style/components/avatar.scss";
->>>>>>> bfbdb101e59e66f43bf73666301621c796fbd854
 
 export default {
   setup() {
     const data = reactive({
       id: 0,
-<<<<<<< HEAD
-=======
       headImage: [],
       buildImgCount: 0,
       build: {},
@@ -217,7 +206,6 @@ export default {
       open: {},
       zj: {},
       gf_imgs: [],
->>>>>>> bfbdb101e59e66f43bf73666301621c796fbd854
     });
 
     const datas = toRefs(data);
@@ -225,11 +213,6 @@ export default {
     onMounted(() => {
       let { id } = Taro.getCurrentInstance().router.params;
       data.id = Number(id);
-<<<<<<< HEAD
-      gethotDetail(data.id).then((res)=>{
-        console.log(res,'3----------');
-      })
-=======
       gethotDetail(data.id).then((res) => {
         // console.log(res, "3----------");
         data.headImage = res.focus;
@@ -248,19 +231,15 @@ export default {
         data.zj = res.build_ysxk;
         data.gf_imgs = res.adviser_share[0].img;
       });
->>>>>>> bfbdb101e59e66f43bf73666301621c796fbd854
     });
 
     return {
       ...datas,
     };
   },
-<<<<<<< HEAD
-=======
   components: {
     AtTimeline,
     AtAvatar,
   },
->>>>>>> bfbdb101e59e66f43bf73666301621c796fbd854
 };
 </script>

@@ -1,7 +1,6 @@
 export default {
     pages: [
-        // 'pages/my/user/exchange/index',
-        // 'pages/my/user/member/index',
+       
         'pages/index/index',
         'pages/findhouse/index',
         'pages/issue/index',
@@ -20,17 +19,20 @@ export default {
         'pages/agent/agent',
         'pages/yushou/index',
         'online/liveList',
-        // 'needPage/rest_house/rest_house',
-        // 'needPage/buy_house/buy_house',
+        'pages/my/user/exchange/index',
+        'pages/my/user/member/index',
+        'needPage/rest_house/rest_house',
+        'needPage/buy_house/buy_house',
         'pages/tudi/index',
-        // 'pages/my/user/member/index',
-        "pages/my/user/myvip/index", 
+        'pages/my/user/member/index',
+        "pages/my/user/myvip/index",
         "pages/my/user/userInfo/index",
-        // 'pages/groups/groups',
+        'pages/groups/groups',
         'pages/calculator/calculator',
         'pages/details/details',
         'pages/mores/mores',
         'pages/person/person',
+        'pages/findhouse/brow/index',
     ],
     window: {
         backgroundTextStyle: 'dark',
@@ -38,7 +40,7 @@ export default {
         navigationBarTitleText: '宿迁找房',
         navigationBarTextStyle: 'black',
         enablePullDownRefresh: true,
-        onReachBottomDistance:0//触底距离a
+        onReachBottomDistance: 0//触底距离a
     },
     "tabBar": {
         "color": "#000",

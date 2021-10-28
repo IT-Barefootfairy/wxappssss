@@ -13,7 +13,7 @@
     </view>
 
     <view class="find_cared">
-      <AtList class="find_atlone">
+      <AtList class="find_atlone" @tap="goto()">
         <AtListItem
           title="智能找房"
           note="户型优质·最近降价·必看好房"
@@ -40,7 +40,12 @@
     </view>
 
     <view class="find_content">
-      <view v-for="(item, index) in List" :key="index" class="te">
+      <view
+        v-for="(item, index) in List"
+        :key="index"
+        class="te"
+        @tap="todetail(item.id)"
+      >
         <view class="find_img">
           <image :src="item.img" alt="" class="img_find" />
         </view>
@@ -50,12 +55,13 @@
             <view :class="item.areaid === 1 ? 'ding' : ''">
               {{ item.areaid === 1 ? "顶" : "" }}
             </view>
-            <view class="title">{{ item.title }}</view>
+            <view class="title"> {{ item.title }}</view>
           </view>
 
           <view class="xiao">
             <view class="left">
-              <view class="shi">{{ item.shi }}室{{ item.ting }}厅{{ item.wei }}卫|{{
+              <view class="shi"
+                >{{ item.shi }}室{{ item.ting }}厅{{ item.wei }}卫|{{
                   item.mianji
                 }}㎡</view
               >
@@ -74,15 +80,19 @@
                     : item2.name == '有电梯'
                     ? 'you'
                     : 'xiao',
-                ]" >{{ item2.name }}</view>
+                ]"
+                >{{ item2.name }}</view
+              >
             </view>
           </view>
           <view class="foot">
             <view class="wan">
               <view class="ve">
-                <view class="danjia"><view class="fangjia">{{ item.fangjia }}</view>
-                 <view>万</view></view>
-                <view class="tiem">{{ item.danjia }}/㎡</view>
+                <view class="danjia">
+                  <view class="fangjia">{{ item.fangjia }}</view>
+                  <view>万</view>
+                  <view class="tiem">{{ item.danjia }}元/㎡</view>
+                </view>
               </view>
             </view>
             <view class="time">{{ item.begintime }}</view>
@@ -97,7 +107,7 @@
 import { ref, onMounted, toRefs, reactive } from "vue";
 import { AtList, AtListItem, AtDivider } from "taro-ui-vue3";
 import { getHouseTop, getHouseList, gethomg } from "../../utils/api";
-
+import Taro from "@tarojs/taro";
 import "./index.scss";
 export default {
   components: {
@@ -110,12 +120,24 @@ export default {
       List: [],
       dataL: {},
       middle_first: "",
+
+      todetail: (id) => {
+        Taro.navigateTo({
+          url: `/pages/new_house/detail?id=${id}`,
+        });
+      },
+
+      goto: () => {
+        Taro.navigateTo({
+          url: `/pages/findhouse/brow/index`,
+        });
+      },
     });
 
     const refData = toRefs(dataIndex);
     onMounted(() => {
       getHouseTop().then((res) => {
-        console.log(res, "1111111111111");
+        // console.log(res, "1111111111111");
         if (res.code === 1 && res.msg === "获取数据成功") {
           dataIndex.dataL = res.data;
           console.log(dataIndex.dataL);
