@@ -1,0 +1,51 @@
+@import "taro-ui-vue3/dist/style/components/input.scss";
+@import "taro-ui-vue3/dist/style/components/tabs.scss";
+@import "taro-ui-vue3/dist/style/components/form.scss";
+@import "taro-ui-vue3/dist/style/components/input.scss";
+@import "taro-ui-vue3/dist/style/components/checkbox.scss";
+.index{
+    width: 100vw;
+    height: 100vh;
+    background-color: aquamarine;
+    .panel__content{
+        width: 100%;
+        height: 500PX;
+        .de{
+            height: 100%;
+            margin-top: 15PX;
+            .deng{
+                height: auto;
+               
+            }
+
+            .page-section{
+                width: 100%;
+                height: 80PX;
+                .radio{
+                   width: 100%;
+                   height: 100%;
+                   display: flex;
+                   .yu{
+                       width: 10%;
+                       height: auto;
+                       padding: 20PX;
+                       .yuan{
+                           width: 20PX;
+                           height: 20PX;
+                           border: 1px solid #ccc;
+                           border-radius: 50%;
+                       }
+                   }
+                    .ytext{
+                        width: 90%;
+                        height: 100%;
+                        font-size: 20px;
+                        line-height: 30PX;
+                    }
+                }
+            }
+        }
+
+    }
+
+}   

@@ -61,7 +61,7 @@
           <view class="xiao">
             <view class="left">
               <view class="shi"
-                >{{ item.shi }}室{{ item.ting }}厅{{ item.wei }}卫|{{
+                >{{ item.shi }}手{{ item.ting }}厅{{ item.wei }}卫|{{
                   item.mianji
                 }}㎡</view
               >
