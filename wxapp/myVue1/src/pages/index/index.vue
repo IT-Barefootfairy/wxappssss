@@ -130,7 +130,7 @@
           </view>
           <view class="rightside">
             <view class="head">
-              <text class="title">{{ item.group_title }}</text>
+              <text class="title">{{ item.title }}</text>
               <text class="status">{{ item.status_name }}</text>
             </view>
             <view class="price"><text class="num">{{ item.price }}</text>元/m²</view>

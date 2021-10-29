@@ -174,6 +174,133 @@
             <view class="pp_text">{{ zj.xmmc }}</view>
           </view>
         </view>
+
+        <view class="sub">
+          <view class="text">订阅最新动态</view>
+        </view>
+
+        <view class="qun">
+          <view class="qun_left">
+            <view class="q_l_t">买房，那些楼盘值得购买?</view>
+            <view class="q_l_d">
+              <view
+                class="q_headimg"
+                v-for="(item, index) in headimg"
+                :key="index"
+              >
+                <image :src="item" class="q_item" />
+              </view>
+              <view class="q_text">{{ qun }}人已加入群聊</view>
+            </view>
+          </view>
+          <view class="qun_right">
+            <view class="q_r_btn">立即进群</view>
+          </view>
+        </view>
+
+        <view class="houseType">
+          <view class="t_top">
+            <view class="t_left">户型图</view>
+            <view class="t_right">更多</view>
+          </view>
+          <view class="t_down">
+            <view class="t_s">
+              <view
+                class="t_item"
+                v-for="(item, index) in houseType"
+                :key="index"
+              >
+                <image class="i_img" :src="item.img" />
+                <view class="i_desc">{{ item.desc }}</view>
+                <view class="i_room">
+                  <view class="shi">{{ item.shi }}</view
+                  >室 <view class="ting">{{ item.ting }}</view
+                  >厅 <view class="wei">{{ item.wei }}</view
+                  >卫
+                </view>
+                <view class="i_price">
+                  <view class="yue">约</view>
+                  <view class="p_num">{{ item.mianji }}</view>
+                  <view class="mm">m²</view>
+                  <view class="db">+对比</view>
+                </view>
+                <view class="i_btn">获取户型报价</view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="report">
+          <view class="r_item">
+            <view class="r_top">
+              <image
+                src="https://images.sqfcw.com/images/newhouse_detail/xiangmuyoushi@3x.png"
+                class="icon"
+              />
+            </view>
+            <view class="r_down">
+              <view class="r_title">项目优势</view>
+              <view class="r_text">优劣势点评</view>
+            </view>
+          </view>
+
+          <view class="r_item">
+            <view class="r_top">
+              <image
+                src="https://images.sqfcw.com/images/newhouse_detail/huxingfenxi@3x.png"
+                class="icon"
+              />
+            </view>
+            <view class="r_down">
+              <view class="r_title">户型分析</view>
+              <view class="r_text">哪个值得买</view>
+            </view>
+          </view>
+
+          <view class="r_item">
+            <view class="r_top">
+              <image
+                src="https://images.sqfcw.com/images/newhouse_detail/gongneng@3x.png"
+                class="icon"
+              />
+            </view>
+            <view class="r_down">
+              <view class="r_title">功能配套</view>
+              <view class="r_text">社区内外配套</view>
+            </view>
+          </view>
+
+          <view class="r_item">
+            <view class="r_top">
+              <image
+                src="https://images.sqfcw.com/images/newhouse_detail/quyufenxi@3x.png"
+                class="icon"
+              />
+            </view>
+            <view class="r_down">
+              <view class="r_title">区域分析</view>
+              <view class="r_text">区位交通教育</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="freeget">免费领取</view>
+
+        <view class="map">
+          <view class="m_text">
+            <view class="m_left">周边</view>
+            <view class="m_right">地图</view>
+          </view>
+          <map
+            class="maps"
+            :longitude="build.xzhou"
+            :latitude="build.yzhou"
+            scale="16"
+            :show-location="true"
+            @regionchange="regionchange"
+            @markertap="markertap"
+          />
+        </view>
       </view>
     </view>
   </view>
@@ -206,6 +333,44 @@ export default {
       open: {},
       zj: {},
       gf_imgs: [],
+      headimg: [],
+      qun: 0,
+      houseType: [],
+      // markers: [
+      //   {
+      //     iconPath:
+      //       "https://avatars2.githubusercontent.com/u/1782542?s=460&u=d20514a52100ed1f82282bcfca6f49052793c889&v=4",
+      //     id: 0,
+      //     latitude: 23.099994,
+      //     longitude: 113.32452,
+      //     width: 50,
+      //     height: 50,
+      //   },
+      // ],
+      // polyline: [
+      //   {
+      //     points: [
+      //       {
+      //         longitude: 113.3245211,
+      //         latitude: 23.10229,
+      //       },
+      //       {
+      //         longitude: 113.32452,
+      //         latitude: 23.21229,
+      //       },
+      //     ],
+      //     color: "#FF0000DD",
+      //     width: 2,
+      //     dottedLine: true,
+      //   },
+      // ],
+
+      regionchange(e) {
+        console.log(e.type);
+      },
+      markertap(e) {
+        console.log("markertap:", e.detail.markerId);
+      },
     });
 
     const datas = toRefs(data);
@@ -214,7 +379,7 @@ export default {
       let { id } = Taro.getCurrentInstance().router.params;
       data.id = Number(id);
       gethotDetail(data.id).then((res) => {
-        // console.log(res, "3----------");
+        console.log(res.headImage, "3----------");
         data.headImage = res.focus;
         data.buildImgCount = res.buildImgCount;
         data.build = res.build;
@@ -230,7 +395,22 @@ export default {
         data.open = res.open;
         data.zj = res.build_ysxk;
         data.gf_imgs = res.adviser_share[0].img;
+        data.headimg = res.headImage;
+        data.qun = res.build.groupCount;
+        data.houseType = res.houseTypePic;
       });
+
+      // var map = new AMap.Map("map", {
+      //   zoom: 11, //级别
+      //   center: [116.403326, 39.914023], //中心点坐标
+      //   // pitch: 20, // 地图俯仰角度，有效范围 0 度- 83 度
+      //   // viewMode: '3D' // 地图模式
+      //   layers: [
+      //     //使用多个图层
+      //     new AMap.TileLayer.Satellite(),
+      //     new AMap.TileLayer.RoadNet(),
+      //   ],
+      // });
     });
 
     return {

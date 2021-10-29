@@ -79,6 +79,3 @@ export async function getPersonsnums(adviser) {
     })
     return result
 }
-
-
-
