@@ -238,7 +238,7 @@ export default {
     };
   },
   components: {
-    AtTimeline,
+    // AtTimeline,
     AtAvatar,
   },
 };
