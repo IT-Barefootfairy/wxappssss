@@ -28,21 +28,27 @@
           </view>
           <view class="text_first2">
             <view class="look_num">
-              <text>{{personListnums.browse}}</text>
+              <text>{{ personListnums.browse }}</text>
             </view>
             <view class="zx_num">
-              <text>{{personListnums.traffic_volume}}</text>
+              <text>{{ personListnums.traffic_volume }}</text>
             </view>
             <view class="like_num">
-              <text>{{personListnums.star}}</text>
+              <text>{{ personListnums.star }}</text>
             </view>
           </view>
           <view class="text_last">
             <view class="photos">
-                <image src="../../static/lin.jpeg" class="first_photos"/>
+              <view class="many_photos">
+                <image src="../../static/lin.jpeg" class="first_photos" />
+                <image src="../../static/lin.jpeg" class="two_photos" />
+                <image src="../../static/lin.jpeg" class="three_photos" />
+                <image src="../../static/lin.jpeg" class="fouth_photos" />
+                <image src="../../static/lin.jpeg" class="five_photos" />
+              </view>
             </view>
             <text>个性签名: 暂无</text>
-            <text>浏览量: {{personListnums.browse}}</text>
+            <text>浏览量: {{ personListnums.browse }}</text>
           </view>
         </view>
       </view>
@@ -52,7 +58,7 @@
 
 <script>
 import { toRefs, reactive, onMounted } from "vue";
-import { getPersons , getPersonsnums} from "../../utils/api";
+import { getPersons, getPersonsnums } from "../../utils/api";
 import Taro from "@tarojs/taro";
 import "./person.scss";
 export default {
@@ -61,7 +67,7 @@ export default {
       adviser: 0,
       id: 0,
       personList: [],
-      personListnums:[],
+      personListnums: [],
     });
     const refsData = toRefs(dataIndex);
 
@@ -76,9 +82,9 @@ export default {
         // console.log(res.lists, "555555555555555555555555");
         dataIndex.personList = res.lists;
       });
-       getPersonsnums(adviser).then((res) => {
-        console.log(res.data[0], "zzzzzzzzzzzzzzzzzzzzzzzzzzz");
-        dataIndex.personListnums = res.data[0];
+      getPersonsnums(adviser).then((res) => {
+        console.log(res.data, "zzzzzzzzzzzzzzzzzzzzzzzzzzz");
+        dataIndex.personListnums = res.data;
       });
     });
     return {

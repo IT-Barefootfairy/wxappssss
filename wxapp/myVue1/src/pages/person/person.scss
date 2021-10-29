@@ -202,18 +202,55 @@
                     text-align: center;
                     .photos 
                     {
-                        background-color: #ff656b;
-                        width: 2rem;
+                        // background-color: #ff656b;
+                        // width: 2rem;
                         height: 1rem;
                         position: fixed;
                         bottom: 8rpx;
-                        .first_photos 
+                        display: flex;
+                        justify-content: center;
+                        flex-flow: row wrap;
+                        margin-left: -32px;
+                        align-items: center;
+                        .many_photos 
                         {
-                            width: 1rem;
-                            height: 1rem;
-                            border-radius: 50%;
-                            margin-left: 16px;
+                            position: relative;
+                            .first_photos 
+                            {
+                                width: 1rem;
+                                height: 1rem;
+                                border-radius: 50%;
+                                margin-left: 34px;
 
+                            }
+                            .two_photos 
+                            {
+                                width: 1rem;
+                                height: 1rem;
+                                border-radius: 50%;
+                                margin-left: -10px;
+                            }
+                            .three_photos 
+                            {
+                                width: 1rem;
+                                height: 1rem;
+                                border-radius: 50%;
+                                margin-left: -18px;
+                            }
+                            .fouth_photos 
+                            {
+                                width: 1rem;
+                                height: 1rem;
+                                border-radius: 50%;
+                                margin-left: -16px;
+                            }
+                            .five_photos 
+                            {
+                                width: 1rem;
+                                height: 1rem;
+                                border-radius: 50%;
+                                margin-left: -18px;
+                            }
                         }
                         
                     }
@@ -221,7 +258,7 @@
                     {
                         position: fixed;
                         bottom: 8px;
-                        left: 140px;
+                        left: 160px;
                     }
                 }
             }
