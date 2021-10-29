@@ -22,7 +22,7 @@
     height: 20PX;
     margin-left: 10PX;
     font-size: 11PX;
-    background-color: rgba(0,0,0,.35);
+    background-color: hsla(0,0%,100%,.35);
     color: #d8d8d8;
     border-radius: 18px;
     display: flex;
@@ -42,4 +42,103 @@
     font-size: 12PX;
     color: #fff;
     font-weight: 600;
+    margin-bottom: 10PX;
+}
+.member_person{
+    width: 100%;
+    margin-top: -8PX;
+    height: 420PX;
+.member_person_header{
+    height: 35PX;
+     background-image: linear-gradient(90deg,#e5ba72,#f4dbb3);
+    opacity: 1;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13PX;
+    font-weight: 600;
+    border-top-left-radius: 8PX;
+    border-top-right-radius: 8PX;
+    position: relative;
+    z-index: 99;
+    width: 100%;
+}
+.member_person_con{
+    width: 84%;
+    height: 332PX;
+    margin: 0 auto;
+    margin-top: 20PX;
+    // background: #0f0;
+    // padding-top: 12PX;
+    padding-bottom: 12PX;
+    font-size: 10PX;
+    color: #999;
+
+}
+}
+.member_person_con .jxiaohei{
+    font-size: 11PX;
+    color: #000 !important;
+    font-weight: 600;
+}
+.dier{
+    margin-top: 10PX;
+    margin-bottom: 10PX;
+}
+.xufei{
+    margin-bottom: 10PX;
+}
+.yuan{
+    width: 31.2%;
+    padding: 24PX 0PX;
+    border-radius: 12PX;
+    background-color: #f3f3f3;
+    text-align: center;
+    position: relative;
+    margin-bottom: 16PX;
+    height: 60PX;
+    background-color: #fcf1e2;
+    border: 3PX solid #e5ba72;
+    line-height: 29PX;
+}
+.qian{
+    font-size: 18PX;
+    width: 102%;
+    background: #e5ba72;
+    color: #fff;
+    font-weight: 500;
+    margin-left: -1PX;
+    height: 27PX;
+}
+.use{
+    font-size: 16PX;
+    font-weight: 600;
+    color: #000;
+}
+.usemoney{
+    width: 100%;
+    height: 20PX;
+    display: flex;
+    justify-content: space-between;
+}
+.member-checkbox{
+    border: 1px solid #CCC;
+    width: 15PX;
+    height: 15PX;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(251, 101, 106);
+    font-weight: 600;
+}
+.kaoyou{
+    margin-top: 12PX;
+    text-align: right;
+}
+.bybtn{
+    background-image: linear-gradient(135deg,#e5ba72,#f4dbb3);
+    color: #333;
+    border-radius: 22PX;
+    border: none;
 }

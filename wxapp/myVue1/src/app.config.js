@@ -6,6 +6,8 @@ export default {
         'pages/message/index',
         'pages/my/index',
         // 以上为底部路由
+        'needPage/login/index',
+        'pages/findhouse/brow/index',
         'pages/new_house/new_house',
         'pages/new_house/detail',
         'pages/ershou/ershou',
@@ -18,13 +20,13 @@ export default {
         'pages/agent/agent',
         'pages/yushou/index',
         'online/liveList',
+        'pages/my/user/exchange/index',
+        'pages/my/user/member/index',
         'needPage/rest_house/rest_house',
         'needPage/buy_house/buy_house',
         'pages/tudi/index',
-        'pages/my/user/member/index',
-        "pages/my/user/myvip/index", 
+        "pages/my/user/myvip/index",
         "pages/my/user/userInfo/index",
-        // 'pages/groups/groups',
         'pages/calculator/calculator',
         'pages/details/details',
         'pages/mores/mores',
@@ -36,7 +38,10 @@ export default {
         navigationBarTitleText: '宿迁找房',
         navigationBarTextStyle: 'black',
         enablePullDownRefresh: true,
-        onReachBottomDistance:0//触底距离a
+        onReachBottomDistance: 0,//触底距离a,
+        // usingComponents: {
+        //     'van-button': '../../components/vant-weapp/dist/button/index'
+        //   }
     },
     "tabBar": {
         "color": "#000",
