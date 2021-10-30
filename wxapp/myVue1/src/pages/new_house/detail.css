@@ -1002,3 +1002,89 @@
 .index .buildmove .down .map .maps {
   margin: 0 auto;
 }
+
+.index .buildmove .down .zygw {
+  width: 95%;
+}
+
+.index .buildmove .down .zygw .z_top {
+  width: 100%;
+  height: 2.75rem;
+  line-height: 2.75rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.index .buildmove .down .zygw .z_top .z_t_left {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.index .buildmove .down .zygw .z_top .z_t_right {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.index .buildmove .down .zygw .z_down {
+  width: 100%;
+}
+
+.index .buildmove .down .zygw .z_down .z_d_item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.index .buildmove .down .zygw .z_down .z_d_item .zd_left {
+  display: flex;
+}
+
+.index .buildmove .down .zygw .z_down .z_d_item .zd_left .zd_himg {
+  display: inline-block;
+  width: 2.75rem;
+  height: 2.75rem;
+  overflow: hidden;
+  border-radius: 2.75rem;
+}
+
+.index .buildmove .down .zygw .z_down .z_d_item .zd_left .zd_himg .zd_himg_s {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.index .buildmove .down .zygw .z_down .z_d_item .zd_left .zd_text {
+  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+.index .buildmove .down .zygw .z_down .z_d_item .zd_left .zd_text .zd_text_top {
+  display: inline-block;
+}
+
+.index .buildmove .down .zygw .z_down .z_d_item .zd_left .zd_text .zd_text_down {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.index .buildmove .down .zygw .z_down .z_d_item .zd_right {
+  display: flex;
+}
+
+.index .buildmove .down .zygw .z_down .z_d_item .zd_right .msg {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+}
+
+.index .buildmove .down .zygw .z_down .z_d_item .zd_right .phone {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+}

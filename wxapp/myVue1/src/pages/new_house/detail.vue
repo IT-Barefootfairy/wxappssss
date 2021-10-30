@@ -296,10 +296,35 @@
             :longitude="build.xzhou"
             :latitude="build.yzhou"
             scale="16"
+            :showCompass="true"
+            :showScale="true"
+            :markers="markers"
             :show-location="true"
             @regionchange="regionchange"
             @markertap="markertap"
           />
+        </view>
+
+        <view class="zygw">
+          <view class="z_top">
+            <view class="z_t_left">置业顾问</view>
+            <view class="z_t_right">更多</view>
+          </view>
+          <view class="z_down" v-for="item in adviserMember" :key="item.id">
+            <view class="z_d_item">
+              <view class="zd_left">
+                <view class="zd_himg"><image :src="item.prelogo" class="zd_himg_s"/></view>
+                <view class="zd_text">
+                  <view class="zd_text_top">{{item.cname}}</view>
+                  <view class="zd_text_down">{{item.traffic_volume}}人咨询过他</view>
+                </view>
+              </view>
+              <view class="zd_right">
+                <image src="../../static/message2.png" class="msg"/>
+                <image src="../../static/phone2.png" class="phone"/>
+              </view>
+            </view>
+          </view>
         </view>
       </view>
     </view>
@@ -336,34 +361,17 @@ export default {
       headimg: [],
       qun: 0,
       houseType: [],
-      // markers: [
-      //   {
-      //     iconPath:
-      //       "https://avatars2.githubusercontent.com/u/1782542?s=460&u=d20514a52100ed1f82282bcfca6f49052793c889&v=4",
-      //     id: 0,
-      //     latitude: 23.099994,
-      //     longitude: 113.32452,
-      //     width: 50,
-      //     height: 50,
-      //   },
-      // ],
-      // polyline: [
-      //   {
-      //     points: [
-      //       {
-      //         longitude: 113.3245211,
-      //         latitude: 23.10229,
-      //       },
-      //       {
-      //         longitude: 113.32452,
-      //         latitude: 23.21229,
-      //       },
-      //     ],
-      //     color: "#FF0000DD",
-      //     width: 2,
-      //     dottedLine: true,
-      //   },
-      // ],
+      xzhou: 0,
+      yzhou: 0,
+      markers: [{
+        iconPath: "https://www.sqfcw.com/m/static/icon/center.png",
+        id: 0,
+        latitude: 33.912608,
+        longitude: 118.268841,
+        width: 30,
+        height: 30
+      }],
+      adviserMember:[],
 
       regionchange(e) {
         console.log(e.type);
@@ -375,10 +383,10 @@ export default {
 
     const datas = toRefs(data);
 
-    onMounted(() => {
+    onMounted(async () => {
       let { id } = Taro.getCurrentInstance().router.params;
       data.id = Number(id);
-      gethotDetail(data.id).then((res) => {
+      await gethotDetail(data.id).then((res) => {
         console.log(res.headImage, "3----------");
         data.headImage = res.focus;
         data.buildImgCount = res.buildImgCount;
@@ -398,19 +406,8 @@ export default {
         data.headimg = res.headImage;
         data.qun = res.build.groupCount;
         data.houseType = res.houseTypePic;
+        data.adviserMember=res.mountMembers;
       });
-
-      // var map = new AMap.Map("map", {
-      //   zoom: 11, //级别
-      //   center: [116.403326, 39.914023], //中心点坐标
-      //   // pitch: 20, // 地图俯仰角度，有效范围 0 度- 83 度
-      //   // viewMode: '3D' // 地图模式
-      //   layers: [
-      //     //使用多个图层
-      //     new AMap.TileLayer.Satellite(),
-      //     new AMap.TileLayer.RoadNet(),
-      //   ],
-      // });
     });
 
     return {

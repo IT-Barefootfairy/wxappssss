@@ -79,3 +79,12 @@ export async function getPersonsnums(adviser) {
     })
     return result
 }
+
+// 地图
+export async function getMaps(latitude, longitude) {
+    console.log(latitude, longitude, '1111')
+    let result = await request({ url: `http://127.0.0.1:7001/suqianMap?lat=${latitude}&lng=${longitude}&distance=3&type=1`, method: "GET" }).then((res) => {
+        return res.data
+    })
+    return result
+}

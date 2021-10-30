@@ -5,7 +5,7 @@
         <image src="../../static/search.png" class="search" />
         <view class="searchtext">请输入内容</view>
       </view>
-      <view class="input_map">
+      <view class="input_map" @tap="toMap">
         <image src="../../static/map.png" class="map" />
         <view class="maptext">地图</view>
       </view>
@@ -204,6 +204,12 @@ export default {
           url: `/pages/new_house/detail?id=${id}`,
         });
         console.log(id);
+      },
+
+      toMap:()=>{
+        Taro.navigateTo({
+          url:`/pages/map_find/map_find`
+        })
       }
     });
 

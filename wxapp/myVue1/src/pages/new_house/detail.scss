@@ -994,6 +994,77 @@
                     margin: 0 auto;
                 }
             }
+            .zygw {
+                width: 95%;
+                .z_top {
+                    width: 100%;
+                    height: 2.75rem;
+                    line-height: 2.75rem;
+                    display: flex;
+                    justify-content: space-between;
+                    .z_t_left {
+                        display: inline-block;
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                    }
+                    .z_t_right {
+                        display: inline-block;
+                        font-size: 0.8rem;
+                        color: gray;
+                    }
+                }
+                .z_down {
+                    width: 100%;
+                    .z_d_item {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        margin: 1rem 0;
+                        .zd_left {
+                            display: flex;
+                            .zd_himg {
+                                display: inline-block;
+                                width: 2.75rem;
+                                height: 2.75rem;
+                                overflow: hidden;
+                                border-radius: 2.75rem;
+                                .zd_himg_s {
+                                    width: 2.75rem;
+                                    height: 2.75rem;
+                                }
+                            }
+                            .zd_text {
+                                display: inline-block;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                margin-left: 0.5rem;
+                                .zd_text_top {
+                                    display: inline-block;
+                                }
+                                .zd_text_down {
+                                    display: inline-block;
+                                    font-size: 0.8rem;
+                                    color: gray;
+                                }
+                            }
+                        }
+                        .zd_right {
+                            display: flex;
+                            .msg {
+                                display: inline-block;
+                                width: 2rem;
+                                height: 2rem;
+                            }
+                            .phone {
+                                display: inline-block;
+                                width: 2rem;
+                                height: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

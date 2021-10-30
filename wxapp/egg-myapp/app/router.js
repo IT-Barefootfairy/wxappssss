@@ -26,4 +26,5 @@ module.exports = app => {
     router.get('/getPersonsnums', controller.sqzf.getPersonsnums)
     router.get('/ershou', controller.sqzf.customershou);
     router.get('/hotbuildetail', controller.sqzf.hotBuildDetail);
+    router.get('/suqianMap', controller.sqzf.suqianMap);
 };
