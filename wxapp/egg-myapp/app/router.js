@@ -1,4 +1,4 @@
-'use strict';
+
 
 /**
  * @param {Egg.Application} app - egg application
@@ -27,4 +27,6 @@ module.exports = app => {
     router.get('/ershou', controller.sqzf.customershou);
     router.get('/hotbuildetail', controller.sqzf.hotBuildDetail);
     router.get('/suqianMap', controller.sqzf.suqianMap);
+    router.get('/searchList', controller.sqzf.searchList);
+    router.get('/searchResult', controller.sqzf.searchResult);
 };

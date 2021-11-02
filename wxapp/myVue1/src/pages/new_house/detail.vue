@@ -361,8 +361,6 @@ export default {
       headimg: [],
       qun: 0,
       houseType: [],
-      xzhou: 0,
-      yzhou: 0,
       markers: [{
         iconPath: "https://www.sqfcw.com/m/static/icon/center.png",
         id: 0,
@@ -407,6 +405,8 @@ export default {
         data.qun = res.build.groupCount;
         data.houseType = res.houseTypePic;
         data.adviserMember=res.mountMembers;
+        data.markers[0].latitude=res.build.yzhou;
+        data.markers[0].longitude=res.build.xzhou;
       });
     });
 

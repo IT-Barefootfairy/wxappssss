@@ -1,7 +1,7 @@
 <template>
   <view class="home_container">
     <view class="home_header_container">
-      <view class="input_container">
+      <view class="input_container" @tap="goSearch">
         <image src="../../static/search.png" class="search" />
         <view class="searchtext">请输入内容</view>
       </view>
@@ -209,6 +209,12 @@ export default {
       toMap:()=>{
         Taro.navigateTo({
           url:`/pages/map_find/map_find`
+        })
+      },
+
+      goSearch:()=>{
+        Taro.navigateTo({
+          url:`/pages/search/search`
         })
       }
     });

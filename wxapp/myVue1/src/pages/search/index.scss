@@ -1,0 +1,206 @@
+.search_index {
+  width: 100%;
+  height: 100%;
+
+  .search {
+    width: 90%;
+    height: 2.2rem;
+    background-color: #EEEEEE;
+    margin: 0 auto;
+    display: flex;
+
+    .selector {
+      width: 20%;
+      background-color: #EEEEEE;
+      display: inline-block;
+      text-align: center;
+
+      .demo-list-item {
+        // text-align: center;
+        display: inline-block;
+
+        .demo-list-item__label {
+          line-height: 2.2rem;
+          height: 100%;
+          display: inline-block;
+        }
+
+        .demo-list-item__value {
+          line-height: 2.2rem;
+          height: 100%;
+          display: inline-block;
+        }
+      }
+    }
+
+    .searchArea {
+      width: 60%;
+      height: 100%;
+      display: inline-block;
+      background-color: #EEEEEE;
+    }
+
+    .searchhCancel {
+      width: 20%;
+      height: 100%;
+      border: none;
+      text-align: center;
+      line-height: 2.2rem;
+      display: inline-block;
+      background-color: #EEEEEE;
+    }
+  }
+
+  .container {
+    width: 100%;
+    .phb {
+      width: 90%;
+      margin: 0 auto;
+
+      // background-color: yellowgreen;
+      .text {
+        display: block;
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 1rem 0;
+      }
+
+      .p_nav {
+        overflow-x: scroll;
+        display: flex;
+
+        .p_item {
+          width: 8.75rem;
+          height: 6rem;
+          flex-shrink: 0;
+          margin: 0 0.3rem 1rem 0;
+          border-radius: 0.2rem;
+
+          .p_title {
+            width: 90%;
+            margin: 0.3rem auto;
+            color: #fff;
+          }
+
+          .p_text {
+            width: 90%;
+            margin: 0 auto;
+            color: #fff;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+
+    .sou {
+      width: 90%;
+      margin: 0 auto;
+
+      .top {
+        width: 100%;
+        height: 1.65rem;
+
+        // background-color: yellowgreen;
+        .aaa {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+
+          .a_img {
+            padding: 0.1rem 0.2rem 0 0;
+          }
+
+          .a_text {
+            font-size: 1.2rem;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .mid {
+        width: 100%;
+        height: 1.2rem;
+        // background-color: violet;
+        display: flex;
+        justify-content: center;
+        line-height: 1.2rem;
+
+        .l {
+          display: inline-block;
+          color: gray;
+          opacity: 0.5;
+        }
+
+        .c {
+          display: inline-block;
+          font-size: 0.8rem;
+          padding: 0 0.2rem;
+        }
+
+        .r {
+          display: inline-block;
+          color: gray;
+          opacity: 0.5;
+        }
+      }
+
+      .down {
+        width: 100%;
+
+        .d_item {
+          width: 100%;
+          height: 1.25rem;
+          padding: 0.625rem 0;
+          // background-color: turquoise;
+          margin-top: 0.1rem;
+          line-height: 1.25rem;
+          display: flex;
+          justify-content: space-between;
+
+          .d_left {
+            display: inline-block;
+            height: 100%;
+            display: flex;
+
+            .d_num {
+              width: 1.25rem;
+              height: 1.25rem;
+              text-align: center;
+              line-height: 1.25rem;
+              color: #fff;
+            }
+
+            .d_title {
+              padding: 0 0.2rem;
+              font-size: 0.8rem;
+            }
+          }
+
+          .d_right {
+            display: inline-block;
+            height: 100%;
+            display: flex;
+
+            .dd_l {
+              display: flex;
+              font-size: 0.8rem;
+
+              .jj {}
+
+              .price2 {}
+
+              .price_unit {}
+            }
+
+            .dd_r {
+              color: gray;
+              padding: 0 0.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
