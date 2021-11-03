@@ -326,6 +326,19 @@
             </view>
           </view>
         </view>
+
+      </view>
+    </view>
+
+    <view class="downn">
+      <view class="d_left">
+        <view class="gz">关注</view>
+        <view class="yy">预约</view>
+        <view class="db" @tap="goHouse_list">对比</view>
+      </view>
+      <view class="d_right">
+        <view class="btn_1">在线咨询</view>
+        <view class="btn_2">致电售楼处</view>
       </view>
     </view>
   </view>
@@ -377,6 +390,11 @@ export default {
       markertap(e) {
         console.log("markertap:", e.detail.markerId);
       },
+      goHouse_list:()=>{
+        Taro.navigateTo({
+          url:`/contrast/house_list`
+        })
+      }
     });
 
     const datas = toRefs(data);

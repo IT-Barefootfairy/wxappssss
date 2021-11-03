@@ -250,6 +250,7 @@ export default {
   },
 
   onReachBottom() {
+    console.log(123);
     getXinfang().then((res) => {
       this.adv = res;
     });

@@ -29,4 +29,5 @@ module.exports = app => {
     router.get('/suqianMap', controller.sqzf.suqianMap);
     router.get('/searchList', controller.sqzf.searchList);
     router.get('/searchResult', controller.sqzf.searchResult);
+    router.get('/newHouse', controller.sqzf.newHouse);
 };

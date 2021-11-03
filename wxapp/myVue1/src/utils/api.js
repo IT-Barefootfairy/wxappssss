@@ -104,3 +104,12 @@ export async function searchResult({keywords,type}) {
     })
     return result
 }
+
+// 新房子
+export async function newHouse() {
+  let result = await request({ url: `http://127.0.0.1:7001/newHouse`, method: "GET" }).then((res) => {
+      return res.data
+  })
+  return result
+}
+

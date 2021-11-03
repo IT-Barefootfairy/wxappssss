@@ -19,7 +19,7 @@
       <input
         class="searchArea"
         placeholder="您想住哪里?"
-        @input="searchResult"
+        @input="searchRes"
       />
       <button @tap="searchCancel" class="searchhCancel">取消</button>
     </view>
@@ -87,7 +87,7 @@
               <view class="dd_l">
                 <view class="jj">{{ item.price_type }}</view>
                 <view class="price2">{{ item.price2 }}</view>
-                <view class="price_unit">{{ item.price_umit }}</view>
+                <view class="price_unit">{{ item.price_unit }}</view>
               </view>
               <view class="dd_r">></view>
             </view>
@@ -99,41 +99,63 @@
     <view class="showResult" v-if="keywordss">
       <view class="sousuo">
         <view class="ms">
-          <view class="m_type">{{selector[selectorValue]}}</view>
-          <view class="m_text">搜索 "{{value}}"</view>
+          <view class="m_type">{{ selector[selectorValue] }}</view>
+          <view class="m_text">搜索 "{{ value }}"</view>
         </view>
         <view class="go">></view>
       </view>
 
       <view class="result">
-
         <view class="newHouse" v-for="item in newHouseList" :key="item.id">
-          <view class="n_left">
-            <view class="n_type">新房</view>
-            <view class="n_text">
-              <view class="n_title">{{item.title}}</view>
-              <view class="n_address">{{item.areaname}}{{item.address}}</view>
-            </view>
+          <view class="n_type"><view class="n_t_type">新房</view></view>
+          <view class="n_text">
+            <view class="n_title">{{ item.title }}</view>
+            <view class="n_address">{{ item.areaname }}{{ item.address }}</view>
           </view>
-          <view v-if="selector[selectorValue]=='新房'||selector[selectorValue]=='小区'" class="n_right_type1">均价{{item.build_price}}元/m²</view>
-          <view v-if="selector[selectorValue]=='二手房'||selector[selectorValue]=='出租房'" class="n_right_type2">{{item.count}}套在售</view>
+
+          <view
+            v-if="
+              selector[selectorValue] == '新房' ||
+              selector[selectorValue] == '小区'
+            "
+            class="n_right_type1"
+            >均价{{ item.build_price }}元/m²</view
+          >
+          <view
+            v-if="
+              selector[selectorValue] == '二手房' ||
+              selector[selectorValue] == '出租房'
+            "
+            class="n_right_type2"
+            >{{ item.count }}套在售</view
+          >
         </view>
 
         <view class="xiaoqu" v-for="it in xiaoQuList" :key="it.id">
-          <view class="x_left">
-            <view class="x_type">小区</view>
-            <view class="x_text">
-              <view class="x_title">{{it.title}}</view>
-              <view class="x_address">{{it.areaname}}{{it.address}}</view>
-            </view>
+          <view class="x_type"><view class="x_t_type">小区</view></view>
+          <view class="x_text">
+            <view class="x_title">{{ it.title }}</view>
+            <view class="x_address">{{ it.areaname }}{{ it.address }}</view>
           </view>
-          <view v-if="selector[selectorValue]=='新房'||selector[selectorValue]=='小区'" class="x_right_type1">均价{{it.avg_price}}元/m²</view>
-          <view v-if="selector[selectorValue]=='二手房'||selector[selectorValue]=='出租房'" class="x_right_type2">{{it.count}}套在售</view>
+          <view
+            v-if="
+              selector[selectorValue] == '新房' ||
+              selector[selectorValue] == '小区'
+            "
+            class="x_right_type1"
+            >均价{{ it.avg_price }}元/m²</view
+          >
+          <view
+            v-if="
+              selector[selectorValue] == '二手房' ||
+              selector[selectorValue] == '出租房'
+            "
+            class="x_right_type2"
+            >{{ it.count }}套在售</view
+          >
         </view>
-
       </view>
     </view>
-
   </view>
 </template>
 
@@ -154,8 +176,8 @@ export default {
       bscroll: 0,
       newHouseList: [],
       xiaoQuList: [],
-      keywordss:'',
-      value:'',
+      keywordss: "",
+      value: "",
 
       handleChange: (e) => {
         data.selectorValue = e.detail.value;
@@ -168,13 +190,12 @@ export default {
           url: `/pages/index/index`,
         });
       },
-      searchResult: (e) => {
-
+      searchRes: (e) => {
         let keywords = encodeURI(e.target.value);
         let type = Number(data.selectorValue) + 1;
 
-        data.keywordss=keywords;
-        data.value=e.target.value;
+        data.keywordss = keywords;
+        data.value = e.target.value;
 
         searchResult({ keywords, type }).then((res) => {
           data.newHouseList = res.builds;

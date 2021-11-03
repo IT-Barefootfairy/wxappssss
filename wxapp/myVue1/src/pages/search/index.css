@@ -193,3 +193,212 @@
   color: gray;
   padding: 0 0.2rem;
 }
+
+.search_index .showResult {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.search_index .showResult .sousuo {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.5rem;
+  position: relative;
+}
+
+.search_index .showResult .sousuo .ms {
+  display: inline-block;
+  height: 100%;
+  display: flex;
+}
+
+.search_index .showResult .sousuo .ms .m_type {
+  width: 2.75rem;
+  height: 1.5rem;
+  margin: 0.25rem 0.2rem;
+  text-align: center;
+  line-height: 1.5rem;
+  background: #E6FDF7;
+  color: #43CCAC;
+  font-size: 0.8rem;
+}
+
+.search_index .showResult .sousuo .ms .m_text {
+  height: 100%;
+  line-height: 2rem;
+}
+
+.search_index .showResult .sousuo .go {
+  display: inline-block;
+  height: 100%;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  color: gray;
+}
+
+.search_index .showResult .sousuo::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 200%;
+  height: 200%;
+  border-bottom: 1px solid gray;
+  transform-origin: 0 0;
+  transform: scale(0.5);
+}
+
+.search_index .showResult .result {
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.search_index .showResult .result .newHouse {
+  width: 100%;
+  height: 4rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search_index .showResult .result .newHouse .n_type {
+  width: 15%;
+  height: 100%;
+}
+
+.search_index .showResult .result .newHouse .n_type .n_t_type {
+  width: 2.75rem;
+  height: 1.5rem;
+  text-align: center;
+  line-height: 1.5rem;
+  background: #E6FDF7;
+  color: #43CCAC;
+  font-size: 0.8rem;
+  margin: 1.5rem 0.2rem;
+}
+
+.search_index .showResult .result .newHouse .n_text {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.2rem;
+}
+
+.search_index .showResult .result .newHouse .n_text .n_title {
+  margin: 0.5rem 0;
+}
+
+.search_index .showResult .result .newHouse .n_text .n_address {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: gray;
+}
+
+.search_index .showResult .result .newHouse .n_right_type1 {
+  width: 35%;
+  height: 100%;
+  padding-top: 1.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+}
+
+.search_index .showResult .result .newHouse .n_right_type2 {
+  width: 35%;
+  height: 100%;
+  padding-top: 1.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+}
+
+.search_index .showResult .result .xiaoqu {
+  width: 100%;
+  height: 4rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search_index .showResult .result .xiaoqu .x_type {
+  width: 15%;
+  height: 100%;
+}
+
+.search_index .showResult .result .xiaoqu .x_type .x_t_type {
+  width: 2.75rem;
+  height: 1.5rem;
+  text-align: center;
+  line-height: 1.5rem;
+  background: #FFF4EE;
+  color: #EA6E31;
+  font-size: 0.8rem;
+  margin: 1.5rem 0.2rem;
+}
+
+.search_index .showResult .result .xiaoqu .x_text {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.2rem;
+}
+
+.search_index .showResult .result .xiaoqu .x_text .x_title {
+  margin: 0.5rem 0;
+}
+
+.search_index .showResult .result .xiaoqu .x_text .x_address {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: gray;
+}
+
+.search_index .showResult .result .xiaoqu .x_right_type1 {
+  width: 35%;
+  height: 100%;
+  padding-top: 1.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+}
+
+.search_index .showResult .result .xiaoqu .x_right_type2 {
+  width: 35%;
+  height: 100%;
+  padding-top: 1.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+}
+
+.search_index .showResult .result .newHouse::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 200%;
+  height: 200%;
+  border-bottom: 1px solid gray;
+  transform-origin: 0 0;
+  transform: scale(0.5);
+}
+
+.search_index .showResult .result .xiaoqu::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 200%;
+  height: 200%;
+  border-bottom: 1px solid gray;
+  transform-origin: 0 0;
+  transform: scale(0.5);
+}

@@ -25,25 +25,6 @@ export default {
       latitude: 0,
       longitude: 0,
       marker: [],
-      // marker: [
-      //   {
-      //     id: 0,
-      //     latitude: 33.96153464535809,
-      //     longitude: 118.27514170596078,
-      //     callout: {
-      //       content: "文本内容",
-      //       color: "#fff",
-      //       fontSize: 14,
-      //       borderWidth: 2,
-      //       borderRadius: 10,
-      //       borderColor: "#70D298",
-      //       bgColor: "#70D298",
-      //       padding: 5,
-      //       display: "ALWAYS",
-      //       textAlign: "center",
-      //     },
-      //   },
-      // ],
 
       viewChange: (e) => {
         data.latitude = e.mpEvent.detail.centerLocation.latitude

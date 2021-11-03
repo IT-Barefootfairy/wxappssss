@@ -1,0 +1,56 @@
+.house_list {
+  width: 100%;
+  height: 100%;
+}
+
+.house_list .top {
+  width: 100%;
+  height: 2.75rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  text-align: center;
+}
+
+.house_list .top .t_title {
+  display: inline-block;
+  height: 2.75rem;
+  line-height: 2.75rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.house_list .btns {
+  position: fixed;
+  width: 100%;
+  height: 3rem;
+  bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.house_list .btns .b_add {
+  width: 45%;
+  height: 100%;
+  text-align: center;
+  line-height: 300%;
+  color: #FF656B;
+  background-color: #fff;
+  border-radius: 50px 0 0 50px;
+  border: 1px solid #FF656B;
+  border-right: none;
+  font-weight: bold;
+}
+
+.house_list .btns .b_go {
+  width: 45%;
+  height: 100%;
+  text-align: center;
+  line-height: 300%;
+  color: #fff;
+  background-color: #FF656B;
+  border-radius: 0 50px 50px 0;
+  border: 1px solid #FF656B;
+  border-left: none;
+  font-weight: bold;
+}
