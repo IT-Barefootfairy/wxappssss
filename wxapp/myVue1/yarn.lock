@@ -1166,11 +1166,6 @@
     "schema-utils" "^2.6.5"
     "source-map" "^0.7.3"
 
-"@popperjs/core@^2.9.2":
-  "integrity" "sha512-IXf3XA7+XyN7CP9gGh/XB0UxVMlvARGEgGXLubFICsUMGz6Q+DU+i4gGlpOxTjKvXjkJDJC8YdqdKkDj9qZHEQ=="
-  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.10.2.tgz"
-  "version" "2.10.2"
-
 "@stencil/core@2.4.0":
   "integrity" "sha512-gU6+Yyd6O0KrCSS/O6j8KKqmRo+/Dcs2fI0+APCpbAWK+nqhwDISpdnSEfGDCLMoAC08XOZCycBRk2K1VGnEcg=="
   "resolved" "https://registry.npmjs.org/@stencil/core/-/core-2.4.0.tgz"
@@ -1585,34 +1580,10 @@
     "@typescript-eslint/types" "4.33.0"
     "eslint-visitor-keys" "^2.0.0"
 
-"@vant/icons@^1.7.1":
-  "integrity" "sha512-66LPEq89w4kl258nALZcRNd14eUJC8VajvTJwvZKOaZawz6CUeVZ6ybhedTUhQhRjeA8SyWD7dFt4ALf33Sabw=="
-  "resolved" "https://registry.npmjs.org/@vant/icons/-/icons-1.7.1.tgz"
-  "version" "1.7.1"
-
-"@vant/lazyload@^1.4.0":
-  "integrity" "sha512-KCbo+jZYPFGIlSip3FLbegdx3h+4e2tTamyO02o2eckUiCaCgaHO5bEX/sWcDm+jEZFT02PRW3Z3LRFSRxh5rw=="
-  "resolved" "https://registry.npmjs.org/@vant/lazyload/-/lazyload-1.4.0.tgz"
-  "version" "1.4.0"
-  dependencies:
-    "@vant/use" "^1.3.2"
-
-"@vant/popperjs@^1.1.0":
-  "integrity" "sha512-8MD1gz146awV/uPxYjz4pet22f7a9YVKqk7T+gFkWFwT9mEcrIUEg/xPrdOnWKLP9puXyYtm7oVfSDSefZ/p/w=="
-  "resolved" "https://registry.npmjs.org/@vant/popperjs/-/popperjs-1.1.0.tgz"
-  "version" "1.1.0"
-  dependencies:
-    "@popperjs/core" "^2.9.2"
-
-"@vant/use@^1.3.2":
-  "integrity" "sha512-EFTdNIzyXy6FOnNVbGg3R7XPr+rbbJaL59l/Ju6nXrV9TV68G8KnHlxPt8BQYsgJMaHlGwM2sJIOd1/SzM7n2A=="
-  "resolved" "https://registry.npmjs.org/@vant/use/-/use-1.3.2.tgz"
-  "version" "1.3.2"
-
 "@vant/weapp@^1.9.1":
-  "integrity" "sha512-/H+F89Rvz6RXZaR8+6xkY5N1KBJHEiKhErrAJ1o07ws4f0ujyEyptDnRCntNgjDFX9mvx8Y0Tozhh9jW5Vqd+Q=="
-  "resolved" "https://registry.npmjs.org/@vant/weapp/-/weapp-1.9.1.tgz"
-  "version" "1.9.1"
+  "integrity" "sha512-brz1JLiXZev4u6cQFyDrGX5xddOHKwKUDgfbUrpqMcpW+dliV4oXMtkDt0rRNfYcEHyfewbvW9O+aas6KJUJYw=="
+  "resolved" "https://registry.npmjs.org/@vant/weapp/-/weapp-1.9.2.tgz"
+  "version" "1.9.2"
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.2.1":
   "integrity" "sha512-QOi5OW45e2R20VygMSNhyQHvpdUwQZqGPc748JLGCYEy+yp8fNFNdbNIGAgZmi9e+2JHPd6i6idRuqivyicIkA=="
@@ -3346,6 +3317,13 @@
   "resolved" "https://registry.npmjs.org/copy-descriptor/-/copy-descriptor-0.1.1.tgz"
   "version" "0.1.1"
 
+"copy-to-clipboard@^3.3.1":
+  "integrity" "sha512-i13qo6kIHTTpCm8/Wup+0b1mVWETvu2kIMzKoK8FpkLkFxlt0znUAHcMzox+T8sPlqtZXq3CulEjQHsYiGFJUw=="
+  "resolved" "https://registry.npmjs.org/copy-to-clipboard/-/copy-to-clipboard-3.3.1.tgz"
+  "version" "3.3.1"
+  dependencies:
+    "toggle-selection" "^1.0.6"
+
 "copy-webpack-plugin@5.1.1":
   "integrity" "sha512-P15M5ZC8dyCjQHWwd4Ia/dm0SgVvZJMYeykVIVYXbGyqO4dWB5oyPHp9i7wjwo5LhtlhKbiBCdS2NvM07Wlybg=="
   "resolved" "https://registry.npmjs.org/copy-webpack-plugin/-/copy-webpack-plugin-5.1.1.tgz"
@@ -4574,7 +4552,7 @@
     "assign-symbols" "^1.0.0"
     "is-extendable" "^1.0.1"
 
-"extend@^3.0.0", "extend@~3.0.2":
+"extend@^3.0.0", "extend@^3.0.2", "extend@~3.0.2":
   "integrity" "sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g=="
   "resolved" "https://registry.npmjs.org/extend/-/extend-3.0.2.tgz"
   "version" "3.0.2"
@@ -9978,6 +9956,11 @@
     "regex-not" "^1.0.2"
     "safe-regex" "^1.1.0"
 
+"toggle-selection@^1.0.6":
+  "integrity" "sha1-bkWxJj8gF/oKzH2J14sVuL932jI="
+  "resolved" "https://registry.npmjs.org/toggle-selection/-/toggle-selection-1.0.6.tgz"
+  "version" "1.0.6"
+
 "toidentifier@1.0.0":
   "integrity" "sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw=="
   "resolved" "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.0.tgz"
@@ -10386,16 +10369,6 @@
     "spdx-correct" "^3.0.0"
     "spdx-expression-parse" "^3.0.0"
 
-"vant@^3.2.6":
-  "integrity" "sha512-voF2jLbcv0Q+t6FXtNCwNu8IhCalmBhOP71RAcpLJblbTaCoHaA3wY15InXazn89v04vco6iBgemIVg5BW9xxw=="
-  "resolved" "https://registry.npmjs.org/vant/-/vant-3.2.6.tgz"
-  "version" "3.2.6"
-  dependencies:
-    "@vant/icons" "^1.7.1"
-    "@vant/lazyload" "^1.4.0"
-    "@vant/popperjs" "^1.1.0"
-    "@vant/use" "^1.3.2"
-
 "vary@~1.1.2":
   "integrity" "sha1-IpnwLG3tMNSllhsLn3RSShj2NPw="
   "resolved" "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz"
@@ -10532,6 +10505,13 @@
   "version" "1.0.1"
   dependencies:
     "defaults" "^1.0.3"
+
+"weapp-qrcode@^1.0.0":
+  "integrity" "sha512-4sa3W0rGDVJ9QaeZpAKlAuUxVyjhDwiUqHyGK/jJMsRMXnhb4yO8qWU/pZruMo+iT5J6CraS67lDMFb1VY+RaA=="
+  "resolved" "https://registry.npmjs.org/weapp-qrcode/-/weapp-qrcode-1.0.0.tgz"
+  "version" "1.0.0"
+  dependencies:
+    "extend" "^3.0.2"
 
 "webidl-conversions@^4.0.2":
   "integrity" "sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg=="
