@@ -1160,6 +1160,7 @@ class SqzfController extends Controller {
             );
         }
         const { ctx } = this;
+        // console.;
         // console.log(ctx.request.url.split('=')[1].split('&')[0],'------------------');
         let type=ctx.request.url.split('=')[2];
         let keywords=ctx.request.url.split('=')[1].split('&')[0];

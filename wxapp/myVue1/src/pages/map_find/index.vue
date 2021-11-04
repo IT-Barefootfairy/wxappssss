@@ -1,5 +1,5 @@
 <template>
-  <view class="map">
+  <view>
     <view class="panel__content">
       <AtTabs
         :swipeable="false"
@@ -8,7 +8,7 @@
         @click="handleClick"
       >
         <AtTabsPane :current="current1" :index="0">
-          <!-- <Tabsr
+          <Tabsr
             :tabList1="[
               { title: '全部区域' },
               { title: '价格' },
@@ -16,7 +16,7 @@
               { title: '更多' },
             ]"
           >
-          </Tabsr> -->
+          </Tabsr>
         </AtTabsPane>
         <AtTabsPane :current="current1" :index="1">
           <view class="tab-content">标签页二的内容</view>
@@ -26,7 +26,6 @@
         </AtTabsPane>
       </AtTabs>
     </view>
-
     <map
       id="map"
       style="width: 100%; height: 420px"
@@ -67,19 +66,28 @@
 </template>
 
 <script>
+/**
+ *  style="
+            position: relative;
+            left: 0;
+            top: 0;
+            height: 300px;
+            background: red;
+          "
+ */
 import { AtActivityIndicator } from "taro-ui-vue3";
 import { AtTabs, AtTabsPane } from "taro-ui-vue3";
 import Taro from "@tarojs/taro";
 import { onMounted, reactive, toRefs, ref } from "vue";
-import { getMaps } from "../../utils/api";
-
+import Tabsr from "../../components/Tabsr.vue";
 export default {
+  name: "Vue3Index",
+
   methods: {
-    handleClick(val) {
-      this.current1 = val;
+    handleClick(value) {
+      this.current1 = value;
     },
   },
-
   setup() {
     let mapKey = `CJABZ-KTGRJ-DUUFO-FUGPF-OCEU5-RBFGG`;
     let flage = ref(false);
@@ -97,7 +105,6 @@ export default {
       obj: {},
       list: [],
     });
-
     let markertap = (e) => {
       console.log("markertap:", e);
       console.log(data.list);
@@ -107,7 +114,7 @@ export default {
             return item.id == e.markerId;
           })[0])
         : "";
-      console.log(data.obj,'objobjobjobj');
+      console.log(data.obj);
     };
 
     let regionchange = (e) => {
@@ -125,33 +132,41 @@ export default {
     };
 
     let init = async () => {
-      await getMaps(latitudes.value, longituder.value).then((res) => {
-        // console.log(res,'mapmapmap');
-        data.list = res.list;
-        res.list.forEach((item, index) => {
-          data.markers.push({
-            id: item.id * 1,
-            latitude: item.lat * 1, //维度
-            longitude: item.lng * 1, //经度
-            iconPath: item.img,
-            callout: {
-              content: `${item.name}\n均价:${item.price}元/m²`,
-              bgColor: "rgb(112, 210, 152)",
-              color: "#fff",
-              fontSize: 14,
-              borderWidth: 2,
-              borderRadius: 10,
-              borderColor: "rgb(112, 210, 152)",
-              padding: 5,
-              display: "ALWAYS",
-              textAlign: "center",
-            },
-          });
-        });
-        flage.value=true;
+      let res = await Taro.request({
+        url: "http://127.0.0.1:7001/getDizhitu",
+        method: "GET",
+        dataType: "json",
+        data: {
+          lat: latitudes.value,
+          lng: longituder.value,
+          distance: 3,
+          type: 1,
+        },
       });
-    };
+      data.list = res.data.data.list;
+      res.data.data.list.forEach((item, index) => {
 
+        data.markers.push({
+          id: item.id * 1,
+          latitude: item.lat * 1, //维度
+          longitude: item.lng * 1, //经度
+          iconPath: item.img,
+          callout: {
+            content: `${item.name}\n均价:${item.price}元/m²`,
+            bgColor: "rgb(112, 210, 152)",
+            color: "#fff",
+            fontSize: 14,
+            borderWidth: 2,
+            borderRadius: 10,
+            borderColor: "rgb(112, 210, 152)",
+            padding: 5,
+            display: "ALWAYS",
+            textAlign: "center",
+          },
+        });
+      });
+      flage.value = true;
+    };
     onMounted(async () => {
       init();
     });
@@ -168,8 +183,7 @@ export default {
       isShow,
     };
   },
-
-  components: { AtTabs, AtTabsPane, AtActivityIndicator },
+  components: { AtTabs, AtTabsPane, Tabsr, AtActivityIndicator },
   data() {
     return {
       current1: 0,
@@ -178,7 +192,7 @@ export default {
 };
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 page,
 view,
 text,
