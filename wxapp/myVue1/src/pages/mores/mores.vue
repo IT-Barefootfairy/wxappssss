@@ -123,7 +123,7 @@ export default {
      dataIndex.id = id;
       dataIndex.user_id = user_id;
       getMessagetext(id).then((res) => {
-        console.log(res.data.member, "66666666666666666666666666666666");
+        // console.log(res.data.member, "66666666666666666666666666666666");
         dataIndex.detailsDatatext = res.data.member;
       });
     });

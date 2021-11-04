@@ -31,6 +31,7 @@ export default {
         'pages/details/details',
         'pages/mores/mores',
         'pages/person/person',
+        'pages/photos/photos',
     ],
     window: {
         backgroundTextStyle: 'dark',

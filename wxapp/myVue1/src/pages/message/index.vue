@@ -15,7 +15,7 @@
         </view>
         <view class="inputs">
           <image src="../../static/sou.png" class="searchs" />
-          <input type="text" placeholder="请输入昵称或手机号" />
+          <input type="text" placeholder="请输入昵称或手机号" @input="getInput"/>
         </view>
       </view>
 
@@ -129,6 +129,8 @@ export default {
       Fangfirends: [],
       isVisiable: false,
       tabList1: [{ title: "聊天" }, { title: "访客" }, { title: "黑名单" }],
+      keywords:'',
+      
       handleClick: (value) => {
         dataIndex.current1 = value;
       },
@@ -144,25 +146,27 @@ export default {
           url: `/pages/details/details?chat_id=${chat_id}&user_id=${user_id}`,
         });
       },
-      //跳转个人信息页面
-      // goPersons:(user_id)=>{
-      //   Taro.navigateTo({
-      //     url:`/pages/mores/mores?user_id=${user_id}`
-      //   })
-      // }
+      getInput:(e)=>{
+         getPerson(e.target.value).then((res)=>{
+              dataIndex.firends=[];
+              dataIndex.firends=res.data.friends;
+         })
+          console.log(e.target.value);
+      }
     });
     const msg = ref("消息");
     const del = ref("清除未读");
     const refData = toRefs(dataIndex);
     onMounted(() => {
-      getPerson().then((res) => {
+      getPerson(dataIndex.keywords).then((res) => {
         console.log(res.data.friends, "1111111111111");
         dataIndex.firends = res.data.friends;
       });
       getFangPerson().then((res) => {
-        console.log(res.data.list, "222222222222222");
+        // console.log(res.data.list, "222222222222222");
         dataIndex.Fangfirends = res.data.list;
       });
+      
       drawQrcode({
         width: 250,
         height: 250,

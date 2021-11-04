@@ -32,8 +32,9 @@ export async function getershou() {
     return result
 }
 //消息
-export async function getPerson() {
-    let result = await request({ url: 'http://127.0.0.1:7001/chatFriends', method: "GET" }).then((res) => {
+export async function getPerson(keywords) {
+    console.log(keywords,'fffff');
+    let result = await request({ url: `http://127.0.0.1:7001/chatFriends?keywords=${keywords}`, method: "GET" }).then((res) => {
         return res
     })
     return result
@@ -75,6 +76,28 @@ export async function getPersons(id) {
 //数量信息
 export async function getPersonsnums(adviser) {
     let result = await request({ url: `http://127.0.0.1:7001/getPersonsnums?adviser=${adviser}`, method: "GET" }).then((res) => {
+        return res.data
+    })
+    return result
+}
+//常用语
+export async function getLanguage() {
+    let result = await request({ url: `http://127.0.0.1:7001/getLanguage`, method: "GET" }).then((res) => {
+        return res.data
+    })
+    return result
+}
+//头像信息
+export async function getPhotos() {
+    let result = await request({ url: `http://127.0.0.1:7001/getPhotos`, method: "GET" }).then((res) => {
+        return res.data
+    })
+    return result
+}
+//点赞
+export async function getLike(ids) {
+    console.log(ids,'sssssssss');
+    let result = await request({ url: `http://127.0.0.1:7001/getLike?id=${ids}`, method: "GET" }).then((res) => {
         return res.data
     })
     return result
