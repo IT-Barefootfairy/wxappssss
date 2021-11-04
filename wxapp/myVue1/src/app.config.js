@@ -32,14 +32,17 @@ export default {
         'pages/mores/mores',
         'pages/person/person',
         'pages/photos/photos',
+        'ask/list',
+        'pages/search/search',
+        'contrast/house_list'
     ],
     window: {
         backgroundTextStyle: 'dark',
         navigationBarBackgroundColor: '#fff',
         navigationBarTitleText: '宿迁找房',
         navigationBarTextStyle: 'black',
-        enablePullDownRefresh: true,
-        onReachBottomDistance: 0,//触底距离a,
+        // enablePullDownRefresh: true,
+        onReachBottomDistance: 1, //触底距离a,
         // usingComponents: {
         //     'van-button': '../../components/vant-weapp/dist/button/index'
         //   }

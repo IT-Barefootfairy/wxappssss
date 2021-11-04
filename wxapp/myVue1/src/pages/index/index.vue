@@ -1,11 +1,11 @@
 <template>
   <view class="home_container">
     <view class="home_header_container">
-      <view class="input_container">
+      <view class="input_container" @tap="goSearch">
         <image src="../../static/search.png" class="search" />
         <view class="searchtext">请输入内容</view>
       </view>
-      <view class="input_map">
+      <view class="input_map" @tap="toMap">
         <image src="../../static/map.png" class="map" />
         <view class="maptext">地图</view>
       </view>
@@ -130,7 +130,7 @@
           </view>
           <view class="rightside">
             <view class="head">
-              <text class="title">{{ item.group_title }}</text>
+              <text class="title">{{ item.title }}</text>
               <text class="status">{{ item.status_name }}</text>
             </view>
             <view class="price"><text class="num">{{ item.price }}</text>元/m²</view>
@@ -204,6 +204,18 @@ export default {
           url: `/pages/new_house/detail?id=${id}`,
         });
         console.log(id);
+      },
+
+      toMap:()=>{
+        Taro.navigateTo({
+          url:`/pages/map_find/map_find`
+        })
+      },
+
+      goSearch:()=>{
+        Taro.navigateTo({
+          url:`/pages/search/search`
+        })
       }
     });
 
@@ -238,6 +250,7 @@ export default {
   },
 
   onReachBottom() {
+    console.log(123);
     getXinfang().then((res) => {
       this.adv = res;
     });

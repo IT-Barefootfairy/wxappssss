@@ -1,9 +1,9 @@
 import { createApp } from 'vue'
 import { createUI } from 'taro-ui-vue3'
-import { 
-  AtButton, 
-  AtInput, 
-  AtTabs 
+import {
+    AtButton,
+    AtInput,
+    AtTabs
 } from 'taro-ui-vue3/lib'
 
 // 引用上述组件对应的样式文件
@@ -22,17 +22,16 @@ window.addEventListener('load', () => {
 })
 
 const App = createApp({
-    onShow(options) {
-    },
+    onShow(options) {},
     // 入口组件不需要实现 render 方法，即使实现了也会被 taro 所覆盖
 })
 
 // 引用部分组件
 const tuv3 = createUI({
-    AtButton, 
-    AtInput, 
+    AtButton,
+    AtInput,
     AtTabs
-  })
-  App.use(tuv3)
+})
+App.use(tuv3)
 
 export default App

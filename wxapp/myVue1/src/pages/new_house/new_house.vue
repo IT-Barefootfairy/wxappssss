@@ -1,17 +1,71 @@
 <template>
-  <view class="index">
-    <text>{{ msg }}</text>
+  <view class="new_house">
+    <view class="top"></view>
+    <view class="down"></view>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
   </view>
 </template>
 <script>
-import { ref } from 'vue';
+import { reactive,toRefs,onMounted } from 'vue';
+import Taro from '@tarojs/taro'
 import './index.scss';
+import {newHouse} from '../../utils/api'
+
 export default {
   setup () {
-    const msg = ref('new_house')
+    const data=reactive({
+
+    })
+
+    const datas=toRefs(data)
+
+    onMounted(()=>{
+      newHouse().then((res)=>{
+        console.log(res,'----');
+      })
+    })
+
     return {
-      msg
+      ...datas
     }
+  },
+  onReachBottom() {
+    console.log('触底了');
   }
 }
 </script>

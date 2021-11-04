@@ -1,11 +1,11 @@
 {
-  "miniprogramRoot": "dist/",
-  "projectname": "myVue1",
-  "description": "xm",
-  "appid": "wx05c99498fcae6417",
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
   "setting": {
     "urlCheck": false,
-    "es6": false,
+    "es6": true,
     "enhance": true,
     "postcss": true,
     "preloadBackgroundData": false,
@@ -37,13 +37,40 @@
     "packNpmRelationList": [],
     "minifyWXSS": true,
     "disableUseStrict": false,
-    "minifyWXML": true,
     "showES6CompileOption": false,
     "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
   "libVersion": "2.20.1",
-  "condition": {}
+  "appid": "wxc242ad4cb4a0825d",
+  "projectname": "miniprogram-1",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "staticServerOptions": {
+    "baseURL": "",
+    "servePath": ""
+  },
+  "isGameTourist": false,
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": []
+    }
+  }
 }

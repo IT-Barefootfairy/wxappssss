@@ -103,5 +103,36 @@ export async function getLike(ids) {
     return result
 }
 
+// 地图
+export async function getMaps(latitude, longitude) {
+    console.log(latitude, longitude, '1111')
+    let result = await request({ url: `http://127.0.0.1:7001/suqianMap?lat=${latitude}&lng=${longitude}&distance=3&type=1`, method: "GET" }).then((res) => {
+        return res.data
+    })
+    return result
+}
 
+// 搜索列表
+export async function searchList() {
+    let result = await request({ url: `http://127.0.0.1:7001/searchList`, method: "GET" }).then((res) => {
+        return res.data
+    })
+    return result
+}
+
+// 搜索内容
+export async function searchResult({keywords,type}) {
+    let result = await request({ url: `http://127.0.0.1:7001/searchResult?keywords=${keywords}&type=${type}`, method: "GET" }).then((res) => {
+        return res.data
+    })
+    return result
+}
+
+// 新房子
+export async function newHouse() {
+  let result = await request({ url: `http://127.0.0.1:7001/newHouse`, method: "GET" }).then((res) => {
+      return res.data
+  })
+  return result
+}
 

@@ -174,6 +174,171 @@
             <view class="pp_text">{{ zj.xmmc }}</view>
           </view>
         </view>
+
+        <view class="sub">
+          <view class="text">订阅最新动态</view>
+        </view>
+
+        <view class="qun">
+          <view class="qun_left">
+            <view class="q_l_t">买房，那些楼盘值得购买?</view>
+            <view class="q_l_d">
+              <view
+                class="q_headimg"
+                v-for="(item, index) in headimg"
+                :key="index"
+              >
+                <image :src="item" class="q_item" />
+              </view>
+              <view class="q_text">{{ qun }}人已加入群聊</view>
+            </view>
+          </view>
+          <view class="qun_right">
+            <view class="q_r_btn">立即进群</view>
+          </view>
+        </view>
+
+        <view class="houseType">
+          <view class="t_top">
+            <view class="t_left">户型图</view>
+            <view class="t_right">更多</view>
+          </view>
+          <view class="t_down">
+            <view class="t_s">
+              <view
+                class="t_item"
+                v-for="(item, index) in houseType"
+                :key="index"
+              >
+                <image class="i_img" :src="item.img" />
+                <view class="i_desc">{{ item.desc }}</view>
+                <view class="i_room">
+                  <view class="shi">{{ item.shi }}</view
+                  >室 <view class="ting">{{ item.ting }}</view
+                  >厅 <view class="wei">{{ item.wei }}</view
+                  >卫
+                </view>
+                <view class="i_price">
+                  <view class="yue">约</view>
+                  <view class="p_num">{{ item.mianji }}</view>
+                  <view class="mm">m²</view>
+                  <view class="db">+对比</view>
+                </view>
+                <view class="i_btn">获取户型报价</view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="report">
+          <view class="r_item">
+            <view class="r_top">
+              <image
+                src="https://images.sqfcw.com/images/newhouse_detail/xiangmuyoushi@3x.png"
+                class="icon"
+              />
+            </view>
+            <view class="r_down">
+              <view class="r_title">项目优势</view>
+              <view class="r_text">优劣势点评</view>
+            </view>
+          </view>
+
+          <view class="r_item">
+            <view class="r_top">
+              <image
+                src="https://images.sqfcw.com/images/newhouse_detail/huxingfenxi@3x.png"
+                class="icon"
+              />
+            </view>
+            <view class="r_down">
+              <view class="r_title">户型分析</view>
+              <view class="r_text">哪个值得买</view>
+            </view>
+          </view>
+
+          <view class="r_item">
+            <view class="r_top">
+              <image
+                src="https://images.sqfcw.com/images/newhouse_detail/gongneng@3x.png"
+                class="icon"
+              />
+            </view>
+            <view class="r_down">
+              <view class="r_title">功能配套</view>
+              <view class="r_text">社区内外配套</view>
+            </view>
+          </view>
+
+          <view class="r_item">
+            <view class="r_top">
+              <image
+                src="https://images.sqfcw.com/images/newhouse_detail/quyufenxi@3x.png"
+                class="icon"
+              />
+            </view>
+            <view class="r_down">
+              <view class="r_title">区域分析</view>
+              <view class="r_text">区位交通教育</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="freeget">免费领取</view>
+
+        <view class="map">
+          <view class="m_text">
+            <view class="m_left">周边</view>
+            <view class="m_right">地图</view>
+          </view>
+          <map
+            class="maps"
+            :longitude="build.xzhou"
+            :latitude="build.yzhou"
+            scale="16"
+            :showCompass="true"
+            :showScale="true"
+            :markers="markers"
+            :show-location="true"
+            @regionchange="regionchange"
+            @markertap="markertap"
+          />
+        </view>
+
+        <view class="zygw">
+          <view class="z_top">
+            <view class="z_t_left">置业顾问</view>
+            <view class="z_t_right">更多</view>
+          </view>
+          <view class="z_down" v-for="item in adviserMember" :key="item.id">
+            <view class="z_d_item">
+              <view class="zd_left">
+                <view class="zd_himg"><image :src="item.prelogo" class="zd_himg_s"/></view>
+                <view class="zd_text">
+                  <view class="zd_text_top">{{item.cname}}</view>
+                  <view class="zd_text_down">{{item.traffic_volume}}人咨询过他</view>
+                </view>
+              </view>
+              <view class="zd_right">
+                <image src="../../static/message2.png" class="msg"/>
+                <image src="../../static/phone2.png" class="phone"/>
+              </view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+    <view class="downn">
+      <view class="d_left">
+        <view class="gz">关注</view>
+        <view class="yy">预约</view>
+        <view class="db" @tap="goHouse_list">对比</view>
+      </view>
+      <view class="d_right">
+        <view class="btn_1">在线咨询</view>
+        <view class="btn_2">致电售楼处</view>
       </view>
     </view>
   </view>
@@ -206,15 +371,39 @@ export default {
       open: {},
       zj: {},
       gf_imgs: [],
+      headimg: [],
+      qun: 0,
+      houseType: [],
+      markers: [{
+        iconPath: "https://www.sqfcw.com/m/static/icon/center.png",
+        id: 0,
+        latitude: 33.912608,
+        longitude: 118.268841,
+        width: 30,
+        height: 30
+      }],
+      adviserMember:[],
+
+      regionchange(e) {
+        console.log(e.type);
+      },
+      markertap(e) {
+        console.log("markertap:", e.detail.markerId);
+      },
+      goHouse_list:()=>{
+        Taro.navigateTo({
+          url:`/contrast/house_list`
+        })
+      }
     });
 
     const datas = toRefs(data);
 
-    onMounted(() => {
+    onMounted(async () => {
       let { id } = Taro.getCurrentInstance().router.params;
       data.id = Number(id);
-      gethotDetail(data.id).then((res) => {
-        // console.log(res, "3----------");
+      await gethotDetail(data.id).then((res) => {
+        console.log(res.headImage, "3----------");
         data.headImage = res.focus;
         data.buildImgCount = res.buildImgCount;
         data.build = res.build;
@@ -230,6 +419,12 @@ export default {
         data.open = res.open;
         data.zj = res.build_ysxk;
         data.gf_imgs = res.adviser_share[0].img;
+        data.headimg = res.headImage;
+        data.qun = res.build.groupCount;
+        data.houseType = res.houseTypePic;
+        data.adviserMember=res.mountMembers;
+        data.markers[0].latitude=res.build.yzhou;
+        data.markers[0].longitude=res.build.xzhou;
       });
     });
 
@@ -238,7 +433,7 @@ export default {
     };
   },
   components: {
-    AtTimeline,
+    // AtTimeline,
     AtAvatar,
   },
 };
