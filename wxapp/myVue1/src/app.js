@@ -3,9 +3,11 @@ import { createUI } from 'taro-ui-vue3'
 import {
     AtButton,
     AtInput,
-    AtTabs
+    AtTabs,
 } from 'taro-ui-vue3/lib'
-
+// 引用全部组件样式
+import 'taro-ui-vue3/dist/style/index.scss'
+import './app.scss'
 // 引用上述组件对应的样式文件
 import 'taro-ui-vue3/dist/style/components/button.scss'
 import 'taro-ui-vue3/dist/style/components/input.scss'
@@ -30,7 +32,7 @@ const App = createApp({
 const tuv3 = createUI({
     AtButton,
     AtInput,
-    AtTabs
+    AtTabs,
 })
 App.use(tuv3)
 

@@ -34,7 +34,13 @@ export default {
         'pages/photos/photos',
         'ask/list',
         'pages/search/search',
-        'contrast/house_list'
+        'contrast/house_list',
+        "pages/add/index",
+        "pages/add/search/index",
+        "pages/add/addimage/index",
+        "pages/add/core/index",
+        "pages/counselor/index",
+        "pages/counselor/author/index"
     ],
     window: {
         backgroundTextStyle: 'dark',
