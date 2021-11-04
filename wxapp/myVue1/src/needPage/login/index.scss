@@ -1,51 +1,107 @@
-@import "taro-ui-vue3/dist/style/components/input.scss";
-@import "taro-ui-vue3/dist/style/components/tabs.scss";
 @import "taro-ui-vue3/dist/style/components/form.scss";
 @import "taro-ui-vue3/dist/style/components/input.scss";
 @import "taro-ui-vue3/dist/style/components/checkbox.scss";
+@import "taro-ui-vue3/dist/style/components/button.scss";
+@import "taro-ui-vue3/dist/style/components/message.scss";
 .index{
-    width: 100vw;
-    height: 100vh;
-    background-color: aquamarine;
-    .panel__content{
+    width: 100%;
+    height: auto;
+    .log_tab{
         width: 100%;
-        height: 500PX;
-        .de{
+        height: 100PX;
+        display: flex;
+        .tabs{
+            width: 50%;
             height: 100%;
-            margin-top: 15PX;
-            .deng{
-                height: auto;
-               
-            }
+            text-align: center;
+            line-height: 100PX;
+            font-size: 22PX;
+        }
+    }
 
-            .page-section{
-                width: 100%;
-                height: 80PX;
-                .radio{
-                   width: 100%;
-                   height: 100%;
-                   display: flex;
-                   .yu{
-                       width: 10%;
-                       height: auto;
-                       padding: 20PX;
-                       .yuan{
-                           width: 20PX;
-                           height: 20PX;
-                           border: 1px solid #ccc;
-                           border-radius: 50%;
-                       }
-                   }
-                    .ytext{
-                        width: 90%;
-                        height: 100%;
-                        font-size: 20px;
-                        line-height: 30PX;
-                    }
-                }
+    .log_deng{
+        width: 100%;
+        height: auto;
+        .inp_log1{
+            width: 100%;
+            margin: 15PX auto;
+        }
+
+        .inp_log2{
+            width: 100%;
+            margin: 15PX auto;
+            color: black;
+        }
+
+        .radio2{
+            width: 85%;
+            margin: 15PX auto;
+        }
+    
+        .btn{
+            width: 100%;
+            margin: 20PX auto;
+            .btn1{
+                width: 85%;
+                margin: 10PX auto;
+            }
+            .btn2{
+                width: 85%;
+                margin: 10PX auto;
             }
         }
 
+        .bottom_log{
+            width: 100%;
+            height: 30PX;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            text-align: center;
+            .zhao{
+                width: 30%;
+                height: 100%;
+                font-size: 25px;
+                color: yellowgreen;
+            }
+            .zhu{
+                width: 30%;
+                height: 100%;
+                font-size: 25px;
+                color: yellowgreen;
+            }
+        }
     }
+    .log_zhu{
+        width: 100%;
+        height: 200PX;
+        .inp_log1{
+            width: 100%;
+            margin: 15PX auto;
+        }
 
+        .inp_log2{
+            width: 100%;
+            margin: 15PX auto;
+            color: black;
+        }
+
+        .radio2{
+            width: 85%;
+            margin: 15PX auto;
+        }
+    
+        .btn{
+            width: 100%;
+            margin: 20PX auto;
+            .btn1{
+                width: 85%;
+                margin: 10PX auto;
+            }
+            .btn2{
+                width: 85%;
+                margin: 10PX auto;
+            }
+        }
+    }
 }   

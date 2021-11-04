@@ -44,7 +44,7 @@
         v-for="(item, index) in List"
         :key="index"
         class="te"
-        @tap="todetail(item.id)"
+        @tap="todetail(item.szlc)"
       >
         <view class="find_img">
           <image :src="item.img" alt="" class="img_find" />
@@ -52,8 +52,8 @@
 
         <view class="find_content_text">
           <view class="find_ding_top">
-            <view :class="item.areaid === 1 ? 'ding' : ''">
-              {{ item.areaid === 1 ? "顶" : "" }}
+            <view :class="item.areaid === 1 ? 'ding2' : 'cheng'">
+              {{ item.areaid === 1 ? "顶" : "城区" }}
             </view>
             <view class="title"> {{ item.title }}</view>
           </view>
@@ -61,9 +61,7 @@
           <view class="xiao">
             <view class="left">
               <view class="shi"
-                >{{ item.shi }}手{{ item.ting }}厅{{ item.wei }}卫|{{
-                  item.mianji
-                }}㎡</view
+                >{{ item.shi }}手{{ item.ting }}厅{{ item.wei }}卫</view
               >
             </view>
             <view class="right">{{ item.community_name }}</view>
@@ -71,18 +69,9 @@
 
           <view class="biaoqian">
             <view v-for="(item2, index2) in item.label" :key="index2">
-              <view
-                :calss="[
-                  item2.name == '精装'
-                    ? 'jing'
-                    : item2.name == '满五唯一'
-                    ? 'man'
-                    : item2.name == '有电梯'
-                    ? 'you'
-                    : 'xiao',
-                ]"
-                >{{ item2.name }}</view
-              >
+              <view :calss="item2.name == '精装' ? 'jing' : 'xiao'">{{
+                item2.name
+              }}</view>
             </view>
           </view>
           <view class="foot">
@@ -90,12 +79,17 @@
               <view class="ve">
                 <view class="danjia">
                   <view class="fangjia">{{ item.fangjia }}</view>
-                  <view>万</view>
-                  <view class="tiem">{{ item.danjia }}元/㎡</view>
+                  <view class="time1">万</view>
+                  <view
+                    class="tiem2"
+                    :style="{ marginLeft: '5PX', fontSize: '13px' }"
+                    >{{ item.danjia }}元/㎡</view
+                  >
                 </view>
               </view>
+              
             </view>
-            <view class="time">{{ item.begintime }}</view>
+            <view class="time3">{{ item.begintime }}</view>
           </view>
         </view>
       </view>
@@ -125,6 +119,7 @@ export default {
         Taro.navigateTo({
           url: `/pages/new_house/detail?id=${id}`,
         });
+        console.log(id,'dssssssssssss');
       },
 
       goto: () => {
